@@ -11,19 +11,19 @@
         WindowStyle="SingleBorderWindow"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="720" Width="1250">
+        Title="ROG Flow Control" Height="720" Width="1250">
 
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
     <Grid Background="#A0161616">
         <DockPanel Margin="0,0,0,0" LastChildFill="True">
-            <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="40" Background="{DynamicResource SecundaryBackgroundColor}" Margin="0,0,0,-1" Orientation="Horizontal">
+            <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="35" Background="{DynamicResource SecundaryBackgroundColor}" Margin="0,0,0,-1" Orientation="Horizontal">
                 <DockPanel Name="TopBarDockPanel" LastChildFill="False" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}">
                     <TextBlock DockPanel.Dock="Left" Foreground="White" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0" FontFamily="Asus Rog">ROG Flow Control</TextBlock>
-                    <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="32" Margin="0,-4,15,0" Text="&#x2A2F;"/>
-                    <TextBlock DockPanel.Dock="Right" Foreground="#FF2D2D2D" FontSize="22" Margin="0,5,24,0" Text="&#9634;"/>
-                    <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="25" Margin="0,-1,24,0" Text="&#128469;"/>
+                    <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="32" Margin="0,-7,15,0" Text="&#x2A2F;"/>
+                    <TextBlock DockPanel.Dock="Right" Foreground="#FF2D2D2D" FontSize="22" Margin="0,3,24,0" Text="&#9634;"/>
+                    <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="25" Margin="0,-5,24,0" Text="&#128469;"/>
                 </DockPanel>
             </StackPanel>
 

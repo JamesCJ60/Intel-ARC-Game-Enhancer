@@ -57,6 +57,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -75,7 +76,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="WindowBlur.cs" />
+    <Compile Include="Pages\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\MotherboardInfo.cs" />
+    <Compile Include="Scripts\WindowBlur.cs" />
     <Page Include="Assets\Icons\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\MainStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -128,6 +137,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Assets\Fonts\ROG.ttf" />
+    <Resource Include="Assets\Fonts\ROGFontsv1.6-Regular.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,5 +147,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="ModernWpfUI">
+      <Version>0.9.6</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ACProfiles\Bal.png" />
+    <Resource Include="Assets\ACProfiles\Silent.png" />
+    <Resource Include="Assets\ACProfiles\Turbo.png" />
+    <Resource Include="Assets\ACProfiles\Windows.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

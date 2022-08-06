@@ -1,0 +1,71 @@
+﻿<Page x:Class="Flow_Control.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Flow_Control.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="670" d:DesignWidth="1180"
+      Title="Home">
+    <Page.Resources>
+        <Style x:Key="ACProfiles" TargetType="{x:Type RadioButton}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryGrayColor}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <Border x:Name="menuButton" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Border x:Name="btnSelected" CornerRadius="6" Width="180"/>
+                                <Rectangle x:Name="Indicator" HorizontalAlignment="Center" Height="2" MaxHeight="2" RadiusX="1" RadiusY="1" VerticalAlignment="Bottom" Width="100" Margin="0,20,0,0" />
+                                <Path x:Name="Icon" Data="{Binding Tag, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}" Fill="{DynamicResource PrimaryGrayColor}" HorizontalAlignment="left" Height="25" Margin="10 0 5 0" Stretch="Uniform" VerticalAlignment="Center" Width="24"/>
+                                <TextBlock x:Name="txtName" Grid.Column="1" Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}" FontSize="{TemplateBinding FontSize}" HorizontalAlignment="Center" Margin="20 0 0 0" Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" TargetName="txtName" Value="{DynamicResource PrimaryBlueColor}"/>
+                                <Setter Property="Fill" TargetName="Icon" Value="{DynamicResource PrimaryBlueColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Fill" TargetName="Icon" Value="{DynamicResource PrimaryBlueColor}"/>
+                                <Setter Property="Fill" TargetName="Indicator" Value="{DynamicResource PrimaryBlueColor}"/>
+                                <Setter Property="Height" TargetName="Indicator" Value="2"/>
+                                <Setter Property="Background" TargetName="btnSelected" Value="{DynamicResource SecundaryGrayColor}"/>
+                                <Setter Property="Foreground" TargetName="txtName" Value="{DynamicResource PrimaryBlueColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Right" Width="400">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <!--<Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Height="75" Margin="15,10,15,0">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            
+                        </StackPanel>
+                    </Border>-->
+                </ScrollViewer>
+            </StackPanel>
+            <Border DockPanel.Dock="Bottom" Height="50" Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="22.5,0,22.5,10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <RadioButton x:Name="rdSilent" IsChecked="True" Content="Silent" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource silent}" Height="45" Width="185" Margin="0,1,0,0" />
+                    <RadioButton x:Name="rdPerf" IsChecked="True" Content="Performance" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource bal}" Height="45" Width="185" Margin="0,1,0,0" />
+                    <RadioButton x:Name="rdTurbo" IsChecked="False" Content="Turbo" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource speed}" Height="45" Width="185" Margin="0,1,0,0" />
+                    <RadioButton x:Name="rdMan" IsChecked="False" Content="Manual" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource custom}" Height="45" Width="185" Margin="0,1,0,0" />
+                </StackPanel>
+            </Border>
+            <TextBlock Name="lblDeviceName" DockPanel.Dock="Top" Foreground="White" FontSize="65" FontFamily="ROG Fonts v1.6" Margin="10,-32.6,0,0">Flow Z13</TextBlock>
+            <Image Name="imgACProfile" Stretch="Uniform"  Source="pack://application:,,,/Assets/ACProfiles/Bal.png" Margin="0,20,0,0"></Image>
+        </DockPanel>
+    </Grid>
+</Page>

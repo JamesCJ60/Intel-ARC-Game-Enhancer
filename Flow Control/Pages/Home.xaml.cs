@@ -12,20 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Interop;
+using Flow_Control.Scripts;
 
-namespace Flow_Control
+namespace Flow_Control.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Home : Page
     {
-        public MainWindow()
+        public Home()
         {
             InitializeComponent();
-
-            PagesNavigation.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
+            string deviceName = MotherboardInfo.Product;
+            deviceName = deviceName.Substring(0, deviceName.LastIndexOf('_'));
+            deviceName = deviceName.Replace("ROG ", null);
+            lblDeviceName.Text = deviceName;
         }
     }
 }
