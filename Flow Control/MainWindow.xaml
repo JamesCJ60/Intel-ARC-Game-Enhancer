@@ -20,7 +20,7 @@
         <DockPanel Margin="0,0,0,0" LastChildFill="True">
             <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="40" Background="{DynamicResource SecundaryBackgroundColor}" Margin="0,0,0,-1" Orientation="Horizontal">
                 <DockPanel Name="TopBarDockPanel" LastChildFill="False" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}">
-                    <TextBlock DockPanel.Dock="Left" Foreground="White" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0">Flow Control</TextBlock>
+                    <TextBlock DockPanel.Dock="Left" Foreground="White" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0" FontFamily="Asus Rog">ROG Flow Control</TextBlock>
                     <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="32" Margin="0,-4,15,0" Text="&#x2A2F;"/>
                     <TextBlock DockPanel.Dock="Right" Foreground="#FF2D2D2D" FontSize="22" Margin="0,5,24,0" Text="&#9634;"/>
                     <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="25" Margin="0,-1,24,0" Text="&#128469;"/>
