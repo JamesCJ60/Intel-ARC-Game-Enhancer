@@ -55,6 +55,9 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibreHardwareMonitorLib">
+      <HintPath>..\..\..\..\Downloads\LibreHardwareMonitor-net472\LibreHardwareMonitorLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Management" />
@@ -90,6 +93,7 @@
     <Compile Include="Scripts\AMD Backend\SendCommand.cs" />
     <Compile Include="Scripts\BasicExeBackend.cs" />
     <Compile Include="Scripts\DisableDevice.cs" />
+    <Compile Include="Scripts\GetSystemInfo.cs" />
     <Compile Include="Scripts\Intel Backend\BindableBase.cs" />
     <Compile Include="Scripts\Intel Backend\ChangeTDP.cs" />
     <Compile Include="Scripts\Intel Backend\DelegateCommand.cs" />
@@ -162,7 +166,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Icons\battery-charge-line.png" />
+    <Resource Include="Assets\Icons\battery-fill.png" />
+    <Resource Include="Assets\Icons\battery-line.png" />
+    <Resource Include="Assets\Icons\battery-low-line.png" />
+    <Resource Include="Assets\Icons\cpu-fill.png" />
+    <Resource Include="Assets\Icons\cpu-line.png" />
+    <Resource Include="Assets\Icons\database-2-line.png" />
+    <Resource Include="Assets\Icons\flashlight-line.png" />
+    <Resource Include="Assets\Icons\temp-hot-line.png" />
+    <Resource Include="Assets\Icons\time-line.png" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ModernWpfUI">
       <Version>0.9.6</Version>

@@ -15,7 +15,7 @@
         Title="ROG Flow Control" Height="720" Width="1250">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="-2" />
+        <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
     <Border CornerRadius="10" BorderThickness="1" Background="#A0161616" Margin="0" Padding="0">
         <Grid>
