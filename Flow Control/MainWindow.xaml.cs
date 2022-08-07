@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Management;
+using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,8 +17,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Flow_Control.Properties;
 using Flow_Control.Scripts;
 using Interop;
+using RyzenSMUBackend;
 
 namespace Flow_Control
 {
@@ -23,8 +29,55 @@ namespace Flow_Control
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static bool IsAdministrator()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+        }
+
         public MainWindow()
         {
+            if (!MainWindow.IsAdministrator())
+            {
+                // Restart and run as admin
+                var exeName = Process.GetCurrentProcess().MainModule.FileName;
+                ProcessStartInfo startInfo = new ProcessStartInfo(exeName);
+                startInfo.Verb = "runas";
+                startInfo.Arguments = "restart";
+                Process.Start(startInfo);
+                this.Close();
+            }
+
+            //Get current directory
+            if (Settings.Default["Path"].ToString() == "" || Settings.Default["Path"].ToString() == null || Settings.Default["Path"].ToString().Contains("System32"))
+            {
+                //Get current path
+                var path = new Uri(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).LocalPath;
+
+                //Save APU Name
+                Settings.Default["CPUName"] = System.Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
+
+                //Save CPUID
+                ManagementClass managClass = new ManagementClass("win32_processor");
+                ManagementObjectCollection managCollec = managClass.GetInstances();
+
+                foreach (ManagementObject managObj in managCollec)
+                {
+                    Settings.Default["CPUID"] = managObj.Properties["processorID"].Value.ToString();
+                    break;
+                }
+
+                //Save path
+                Settings.Default["Path"] = path;
+                Settings.Default.Save();
+            }
+
+            if (Settings.Default.CPUName.Contains("AMD") || Settings.Default.CPUName.Contains("Ryzen"))
+            {
+                Families.SetFam();
+            }
+
             InitializeComponent();
 
             compatCheck();
@@ -32,6 +85,18 @@ namespace Flow_Control
 
             PagesNavigation.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        [DllImport("inpoutx64.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetPhysLong(UIntPtr memAddress, ref uint DData);
+
+        [DllImport("inpoutx64.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool IsInpOutDriverOpen();
+
+        [DllImport("inpoutx64.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetPhysLong(UIntPtr memAddress, uint DData);
 
         public void compatCheck()
         {

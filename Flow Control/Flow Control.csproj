@@ -80,6 +80,21 @@
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\AMD Backend\Addresses.cs" />
+    <Compile Include="Scripts\AMD Backend\Families.cs" />
+    <Compile Include="Scripts\AMD Backend\GetSensor.cs" />
+    <Compile Include="Scripts\AMD Backend\OpenLibSys.cs" />
+    <Compile Include="Scripts\AMD Backend\pmtables.cs" />
+    <Compile Include="Scripts\AMD Backend\RwMmioAmd.cs" />
+    <Compile Include="Scripts\AMD Backend\RyzenSmu.cs" />
+    <Compile Include="Scripts\AMD Backend\SendCommand.cs" />
+    <Compile Include="Scripts\BasicExeBackend.cs" />
+    <Compile Include="Scripts\DisableDevice.cs" />
+    <Compile Include="Scripts\Intel Backend\BindableBase.cs" />
+    <Compile Include="Scripts\Intel Backend\ChangeTDP.cs" />
+    <Compile Include="Scripts\Intel Backend\DelegateCommand.cs" />
+    <Compile Include="Scripts\Intel Backend\RunCLI.cs" />
+    <Compile Include="Scripts\Intel Backend\StreamWriterLog.cs" />
     <Compile Include="Scripts\MotherboardInfo.cs" />
     <Compile Include="Scripts\WindowBlur.cs" />
     <Page Include="Assets\Icons\Icons.xaml">
