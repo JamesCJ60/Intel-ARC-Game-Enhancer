@@ -58,10 +58,10 @@
             </StackPanel>
             <Border DockPanel.Dock="Bottom" Height="50" Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="22.5,0,22.5,10">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <RadioButton x:Name="rdSilent" IsChecked="True" Content="Silent" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource silent}" Height="45" Width="185" Margin="0,1,0,0" />
-                    <RadioButton x:Name="rdPerf" IsChecked="True" Content="Performance" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource bal}" Height="45" Width="185" Margin="0,1,0,0" />
-                    <RadioButton x:Name="rdTurbo" IsChecked="False" Content="Turbo" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource speed}" Height="45" Width="185" Margin="0,1,0,0" />
-                    <RadioButton x:Name="rdMan" IsChecked="False" Content="Manual" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource custom}" Height="45" Width="185" Margin="0,1,0,0" />
+                    <RadioButton x:Name="rdSilent" IsChecked="True" Content="Silent" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource silent}" Height="45" Width="185" />
+                    <RadioButton x:Name="rdPerf" IsChecked="True" Content="Performance" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource bal}" Height="45" Width="185" />
+                    <RadioButton x:Name="rdTurbo" IsChecked="False" Content="Turbo" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource speed}" Height="45" Width="185" />
+                    <RadioButton x:Name="rdMan" IsChecked="False" Content="Manual" Style="{DynamicResource ACProfiles}" Tag="{DynamicResource custom}" Height="45" Width="185" />
                 </StackPanel>
             </Border>
             <TextBlock Name="lblDeviceName" DockPanel.Dock="Top" Foreground="White" FontSize="65" FontFamily="ROG Fonts v1.6" Margin="10,-32.6,0,0">Flow Z13</TextBlock>

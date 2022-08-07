@@ -116,5 +116,15 @@ namespace Flow_Control
                 }
             }
         }
+
+        private void Close_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Minimise_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
 }
