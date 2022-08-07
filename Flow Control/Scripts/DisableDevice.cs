@@ -8,6 +8,7 @@ using Microsoft.Win32.SafeHandles;
 using System.Security;
 using System.Runtime.ConstrainedExecution;
 using System.Management;
+using System.Windows;
 
 namespace Flow_Control.Scripts
 {
@@ -335,33 +336,40 @@ ref PropertyChangeParameters classInstallParams, int classInstallParamsSize);
         // enable/disable...
         private static void EnableDevice(SafeDeviceInfoSetHandle handle, DeviceInfoData diData, bool enable)
         {
-            PropertyChangeParameters @params = new PropertyChangeParameters();
-            // The size is just the size of the header, but we've flattened the structure.
-            // The header comprises the first two fields, both integer.
-            @params.Size = 8;
-            @params.DiFunction = DiFunction.PropertyChange;
-            @params.Scope = Scopes.Global;
-            if (enable)
+            try
             {
-                @params.StateChange = StateChangeAction.Enable;
-            }
-            else
-            {
-                @params.StateChange = StateChangeAction.Disable;
-            }
-
-            bool result = NativeMethods.SetupDiSetClassInstallParams(handle, ref diData, ref @params, Marshal.SizeOf(@params));
-            if (result == false) throw new Win32Exception();
-            result = NativeMethods.SetupDiCallClassInstaller(DiFunction.PropertyChange, handle, ref diData);
-            if (result == false)
-            {
-                int err = Marshal.GetLastWin32Error();
-                if (err == (int)SetupApiError.NotDisableable)
-                    throw new ArgumentException("Device can't be disabled (programmatically or in Device Manager).");
-                else if (err >= (int)SetupApiError.NoAssociatedClass && err <= (int)SetupApiError.OnlyValidateViaAuthenticode)
-                    throw new Win32Exception("SetupAPI error: " + ((SetupApiError)err).ToString());
+                PropertyChangeParameters @params = new PropertyChangeParameters();
+                // The size is just the size of the header, but we've flattened the structure.
+                // The header comprises the first two fields, both integer.
+                @params.Size = 8;
+                @params.DiFunction = DiFunction.PropertyChange;
+                @params.Scope = Scopes.Global;
+                if (enable)
+                {
+                    @params.StateChange = StateChangeAction.Enable;
+                }
                 else
-                    throw new Win32Exception();
+                {
+                    @params.StateChange = StateChangeAction.Disable;
+                }
+
+                bool result = NativeMethods.SetupDiSetClassInstallParams(handle, ref diData, ref @params, Marshal.SizeOf(@params));
+                if (result == false) throw new Win32Exception();
+                result = NativeMethods.SetupDiCallClassInstaller(DiFunction.PropertyChange, handle, ref diData);
+                if (result == false)
+                {
+                    int err = Marshal.GetLastWin32Error();
+                    if (err == (int)SetupApiError.NotDisableable)
+                        throw new ArgumentException("Device can't be disabled (programmatically or in Device Manager).");
+                    else if (err >= (int)SetupApiError.NoAssociatedClass && err <= (int)SetupApiError.OnlyValidateViaAuthenticode)
+                        throw new Win32Exception("SetupAPI error: " + ((SetupApiError)err).ToString());
+                    else
+                        throw new Win32Exception();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

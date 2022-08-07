@@ -70,5 +70,17 @@ namespace Flow_Control.Properties {
                 this["ACProfile"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PowerFix {
+            get {
+                return ((bool)(this["PowerFix"]));
+            }
+            set {
+                this["PowerFix"] = value;
+            }
+        }
     }
 }
