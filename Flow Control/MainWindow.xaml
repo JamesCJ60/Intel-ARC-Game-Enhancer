@@ -33,10 +33,10 @@
                 <Border DockPanel.Dock="Left" Width="62" Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="0,0,0,10">
                     <StackPanel Orientation="Vertical">
                         <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton x:Name="rdACPresets" IsChecked="False" Content="Presets" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource custom}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton x:Name="rdRGB" IsChecked="False" Content="RGB" Style="{DynamicResource RGBControl}" Tag="{DynamicResource flash}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton x:Name="rdInfo" IsChecked="False" Content="Info" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource info}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton x:Name="rdSettings" IsChecked="False" Content="Settings" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource settings}" Height="50" Width="60" Margin="0,1,0,0" />
+                        <RadioButton IsEnabled="False" x:Name="rdACPresets" IsChecked="False" Content="Presets" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource custom}" Height="50" Width="60" Margin="0,1,0,0" />
+                        <RadioButton IsEnabled="False" x:Name="rdRGB" IsChecked="False" Content="RGB" Style="{DynamicResource RGBControl}" Tag="{DynamicResource flash}" Height="50" Width="60" Margin="0,1,0,0" />
+                        <RadioButton IsEnabled="False" x:Name="rdInfo" IsChecked="False" Content="Info" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource info}" Height="50" Width="60" Margin="0,1,0,0" />
+                        <RadioButton IsEnabled="False" x:Name="rdSettings" IsChecked="False" Content="Settings" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource settings}" Height="50" Width="60" Margin="0,1,0,0" />
                     </StackPanel>
                 </Border>
                 <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">

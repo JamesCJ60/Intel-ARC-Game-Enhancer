@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 using AATUV3.Scripts;
 using UXTU.Scripts.Intel;
 using RyzenSMUBackend;
+using System.Windows;
 
 namespace Flow_Control.Scripts
 {
     internal class ApplySettings
     {
-        public static void AppleACSettings(int ACProfile)
+        public static async void AppleACSettings(int ACProfile)
         {
             string fileToLoad = "";
             string acMode = "";
@@ -36,9 +37,11 @@ namespace Flow_Control.Scripts
             string atrofacPath = "\\bin\\atrofac\\atrofac-cli.exe";
             BasicExeBackend.ApplySettings(atrofacPath, atrofacArgs, true);
 
-            
 
-            if (Settings.Default.CPUName.Contains("AMD"))
+            System.Threading.Thread.Sleep(5000);
+
+
+            if (GetSystemInfo.GetCPUName().Contains("AMD"))
             {
                 SendCommand.set_tctl_temp(Convert.ToUInt32(lines[41]));
                 SendCommand.set_apu_skin_temp_limit(Convert.ToUInt32(lines[42]));
@@ -61,9 +64,10 @@ namespace Flow_Control.Scripts
             {
                 int pl1 = Convert.ToInt32(lines[35]);
                 int pl2 = Convert.ToInt32(lines[38]);
-                ChangeTDP.changeTDP(pl1, pl2);
+                await Task.Run(() => ChangeTDP.changeTDP(pl1, pl2));
             }
 
+            System.Threading.Thread.Sleep(1000);
 
             string path = "\\bin\\oc.exe";
             //Pass settings on to be applied
