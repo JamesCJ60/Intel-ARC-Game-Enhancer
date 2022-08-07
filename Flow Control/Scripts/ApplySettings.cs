@@ -46,14 +46,15 @@ namespace Flow_Control.Scripts
                 SendCommand.set_slow_limit(Convert.ToUInt32(lines[35]) * 1000);
                 SendCommand.set_fast_limit(Convert.ToUInt32(lines[38]) * 1000);
 
+                int iGPUClock = Convert.ToInt32(lines[21]);
+
+                if(iGPUClock > 200) SendCommand.set_gfx_clk(Convert.ToUInt32(iGPUClock));
+
                 int CPUCO = Convert.ToInt32(lines[28]);
                 int iGPUCO = Convert.ToInt32(lines[29]);
 
-                if (CPUCO >= 0) SendCommand.set_coall((uint)CPUCO);
-                else SendCommand.set_coall(Convert.ToUInt32(0x100000 - (uint)(-1 * (int)CPUCO)));
-
-                if (iGPUCO >= 0) SendCommand.set_cogfx((uint)CPUCO);
-                else SendCommand.set_cogfx(Convert.ToUInt32(0x100000 - (uint)(-1 * (int)iGPUCO)));
+                SendCommand.set_coall(Convert.ToUInt32(0x100000 - (uint)((int)CPUCO)));
+                SendCommand.set_cogfx(Convert.ToUInt32(0x100000 - (uint)((int)iGPUCO)));
 
             }
             else
