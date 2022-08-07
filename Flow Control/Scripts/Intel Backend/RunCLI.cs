@@ -12,7 +12,6 @@ namespace UXTU.Scripts.Intel
         public static string RunCommand(string arguments, bool readOutput, string processName = "cmd.exe")
         {
             //Runs CLI, if readOutput is true then returns output
-
             try
             {
 
@@ -25,6 +24,7 @@ namespace UXTU.Scripts.Intel
                 startInfo.Arguments = "/c " + arguments;
                 startInfo.Verb = "runas";
                 process.StartInfo = startInfo;
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 process.Start();
                 if (readOutput)
                 {

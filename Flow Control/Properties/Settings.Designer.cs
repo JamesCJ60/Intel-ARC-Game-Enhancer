@@ -23,21 +23,27 @@ namespace Flow_Control.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Path {
             get {
                 return ((string)(this["Path"]));
             }
+            set {
+                this["Path"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string CPUName {
             get {
                 return ((string)(this["CPUName"]));
+            }
+            set {
+                this["CPUName"] = value;
             }
         }
         
@@ -50,6 +56,18 @@ namespace Flow_Control.Properties {
             }
             set {
                 this["CPUID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int ACProfile {
+            get {
+                return ((int)(this["ACProfile"]));
+            }
+            set {
+                this["ACProfile"] = value;
             }
         }
     }

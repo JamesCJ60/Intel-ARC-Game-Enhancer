@@ -91,6 +91,7 @@
     <Compile Include="Scripts\AMD Backend\RwMmioAmd.cs" />
     <Compile Include="Scripts\AMD Backend\RyzenSmu.cs" />
     <Compile Include="Scripts\AMD Backend\SendCommand.cs" />
+    <Compile Include="Scripts\ApplySettings.cs" />
     <Compile Include="Scripts\BasicExeBackend.cs" />
     <Compile Include="Scripts\DisableDevice.cs" />
     <Compile Include="Scripts\GetSystemInfo.cs" />

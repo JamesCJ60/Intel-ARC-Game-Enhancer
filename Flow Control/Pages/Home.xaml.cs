@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Flow_Control.Scripts;
 using Flow_Control.Properties;
+using AATUV3.Scripts;
 
 namespace Flow_Control.Pages
 {
@@ -39,9 +40,16 @@ namespace Flow_Control.Pages
             {
                 dGPUName.Visibility = Visibility.Collapsed;
             }
+
+            switchProfile(Settings.Default.ACProfile);
+
+            if (Settings.Default.ACProfile == 0) rdSilent.IsChecked = true;
+            else if (Settings.Default.ACProfile == 1) rdPerf.IsChecked = true;
+            else if (Settings.Default.ACProfile == 2) rdTurbo.IsChecked = true;
+            else if (Settings.Default.ACProfile == 3) rdMan.IsChecked = true;
         }
 
-        public void switchProfile(int ACProfile)
+        public async void switchProfile(int ACProfile)
         {
             if (ACProfile == 0)
             {
@@ -59,6 +67,11 @@ namespace Flow_Control.Pages
             {
                 imgACProfile.Source = new BitmapImage(new Uri("pack://application:,,,/Assets/ACProfiles/Windows.png"));
             }
+
+            Settings.Default.ACProfile = ACProfile;
+            Settings.Default.Save();
+
+            await Task.Run(() => ApplySettings.AppleACSettings(ACProfile));
         }
 
         private void rdSilent_Click(object sender, RoutedEventArgs e)
