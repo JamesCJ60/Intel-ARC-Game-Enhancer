@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using LibreHardwareMonitor;
@@ -165,5 +166,39 @@ namespace Flow_Control.Scripts
 
             return "";
         }
+
+        public static string brightness;
+
+
+        //create a management scope object
+        public static ManagementScope scope = new ManagementScope("\\\\.\\ROOT\\WMI");
+
+        public static void getBrightness()
+        {
+            try
+            {
+                //create object query
+                ObjectQuery query = new ObjectQuery("SELECT * FROM WmiMonitorBrightness");
+
+                //create object searcher
+                ManagementObjectSearcher searcher =
+                                        new ManagementObjectSearcher(scope, query);
+
+                //get a collection of WMI objects
+                ManagementObjectCollection queryCollection = searcher.Get();
+
+                //enumerate the collection.
+                foreach (ManagementObject m in queryCollection)
+                {
+                    // access properties of the WMI object
+                    brightness = m["CurrentBrightness"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
     }
+
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AudioSwitcher.AudioApi.CoreAudio;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,7 @@ using Flow_Control.Properties;
 using AATUV3.Scripts;
 using UXTU.Scripts.Intel;
 using Microsoft.Win32;
+using System.Management;
 
 namespace Flow_Control.Pages
 {
@@ -80,6 +82,11 @@ namespace Flow_Control.Pages
 
             tbBatPercent.Value = Settings.Default.BatLimit;
             setBatteryLimit();
+
+            GetSystemInfo.getBrightness();
+            tbDisplayPercent.Value = Convert.ToUInt32(GetSystemInfo.brightness);
+
+            BasicExeBackend.Garbage_Collect();
         }
 
         public async void switchProfile(int ACProfile)
@@ -185,14 +192,40 @@ namespace Flow_Control.Pages
             key.SetValue("MyApplication", System.Reflection.Assembly.GetExecutingAssembly().Location.ToString());
         }
 
-        private void tbDisplayPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private async void tbDisplayPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblDisplayPercent.Text = ((int)tbDisplayPercent.Value).ToString() + "%";
+
+            int newBirghtness = (int)tbDisplayPercent.Value;
+            await Task.Run(() =>
+            {
+                var mclass = new ManagementClass("WmiMonitorBrightnessMethods")
+                {
+                    Scope = new ManagementScope(@"\\.\root\wmi")
+                };
+                var instances = mclass.GetInstances();
+                var args = new object[] { 1, newBirghtness };
+                foreach (ManagementObject instance in instances)
+                {
+                    instance.InvokeMethod("WmiSetBrightness", args);
+                }
+                BasicExeBackend.Garbage_Collect();
+                return;
+            });
         }
 
-        private void tbVolPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private async void tbVolPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblVolPercent.Text = ((int)tbVolPercent.Value).ToString() + "%";
+            int newVolume = (int)tbVolPercent.Value;
+            await Task.Run(() =>
+            {
+                CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+                //Set volume of current sound device
+                defaultPlaybackDevice.Volume = newVolume;
+                BasicExeBackend.Garbage_Collect();
+                return;
+            });
         }
 
         private void tbBatPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

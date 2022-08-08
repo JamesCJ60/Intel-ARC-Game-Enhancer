@@ -24,6 +24,7 @@ namespace UXTU.Scripts.Intel
                 startInfo.Arguments = "/c " + arguments;
                 startInfo.Verb = "runas";
                 process.StartInfo = startInfo;
+                startInfo.CreateNoWindow = true;
                 process.Start();
                 if (readOutput)
                 {
