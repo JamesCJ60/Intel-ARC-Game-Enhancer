@@ -16,6 +16,7 @@ using Flow_Control.Scripts;
 using Flow_Control.Properties;
 using AATUV3.Scripts;
 using UXTU.Scripts.Intel;
+using Microsoft.Win32;
 
 namespace Flow_Control.Pages
 {
@@ -43,6 +44,19 @@ namespace Flow_Control.Pages
                 rdEnableFix.Tag = FindResource("disable");
                 rdDisableFix.Tag = FindResource("enable");
                 rdDisableFix.IsChecked = true; 
+            }
+
+            if (Settings.Default.Boot == true)
+            {
+                rdEnableBoot.IsChecked = true;
+                rdEnableBoot.Tag = FindResource("enable");
+                rdDisableBoot.Tag = FindResource("disable");
+            }
+            else
+            {
+                rdEnableBoot.Tag = FindResource("disable");
+                rdDisableBoot.Tag = FindResource("enable");
+                rdDisableBoot.IsChecked = true;
             }
 
             lblCPUName.Text = GetSystemInfo.GetCPUName().Replace("with Radeon Graphics", null);
@@ -91,6 +105,7 @@ namespace Flow_Control.Pages
             Settings.Default.Save();
 
             await Task.Run(() => ApplySettings.AppleACSettings(ACProfile));
+            await Task.Run(() => ApplyFix());
         }
 
         private void rdSilent_Click(object sender, RoutedEventArgs e)
@@ -125,8 +140,6 @@ namespace Flow_Control.Pages
             rdDisableFix.Tag = FindResource("enable");
             Settings.Default.PowerFix = false;
             Settings.Default.Save();
-            DeviceHelper.SetDeviceEnabled(DLAHI_GUID, DLAHI_Instance, false);
-            DeviceHelper.SetDeviceEnabled(DTTDE_GUID, DTTDE_Instance, false);
         }
 
         private void rdEnableFix_Click(object sender, RoutedEventArgs e)
@@ -135,24 +148,41 @@ namespace Flow_Control.Pages
             rdDisableFix.Tag = FindResource("disable");
             Settings.Default.PowerFix = true;
             Settings.Default.Save();
-            DeviceHelper.SetDeviceEnabled(DLAHI_GUID, DLAHI_Instance, true);
-            DeviceHelper.SetDeviceEnabled(DTTDE_GUID, DTTDE_Instance, true);
+        }
+
+        private void ApplyFix()
+        {
+            System.Threading.Thread.Sleep(25000);
+
+            if (Settings.Default.PowerFix == true)
+            {
+                DeviceHelper.SetDeviceEnabled(DLAHI_GUID, DLAHI_Instance, true);
+                DeviceHelper.SetDeviceEnabled(DTTDE_GUID, DTTDE_Instance, true);
+            }
         }
 
         private void rdDisableBoot_Click(object sender, RoutedEventArgs e)
         {
             rdEnableBoot.Tag = FindResource("disable");
             rdDisableBoot.Tag = FindResource("enable");
-            //Settings.Default.PowerFix = false;
-            //Settings.Default.Save();
+            Settings.Default.Boot = false;
+            Settings.Default.Save();
+
+            var path = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(path, true);
+            key.DeleteValue("MyApplication", false);
         }
 
         private void rdEnableBoot_Click(object sender, RoutedEventArgs e)
         {
             rdEnableBoot.Tag = FindResource("enable");
             rdDisableBoot.Tag = FindResource("disable");
-            //Settings.Default.PowerFix = true;
-            //Settings.Default.Save();
+            Settings.Default.Boot = true;
+            Settings.Default.Save();
+
+            var path = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey(path, true);
+            key.SetValue("MyApplication", System.Reflection.Assembly.GetExecutingAssembly().Location.ToString());
         }
 
         private void tbDisplayPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

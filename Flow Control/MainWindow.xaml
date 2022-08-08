@@ -12,7 +12,7 @@
         WindowStyle="None"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Title="ROG Flow Control" Height="720" Width="1250">
+        Title="ROG Flow Control" Height="720" Width="1250" Closing="Window_Closing">
 
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />

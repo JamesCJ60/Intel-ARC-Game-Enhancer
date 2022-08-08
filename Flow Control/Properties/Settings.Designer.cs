@@ -94,5 +94,17 @@ namespace Flow_Control.Properties {
                 this["BatLimit"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Boot {
+            get {
+                return ((bool)(this["Boot"]));
+            }
+            set {
+                this["Boot"] = value;
+            }
+        }
     }
 }

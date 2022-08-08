@@ -19,7 +19,7 @@
             <StackPanel DockPanel.Dock="Right" Width="400">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
                                 <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">SYSTEM SPECS:</TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
@@ -43,7 +43,7 @@
                         </Border>
 
 
-                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
                                 <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">DEVICE CONTROL:</TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
@@ -66,27 +66,36 @@
                             </StackPanel>
                         </Border>
 
-                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8" Name="PowerFix">
+                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8" Name="PowerFix">
                             <StackPanel>
                                 <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">POWER BUG FIX:</TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" >
                                     <RadioButton x:Name="rdDisableFix" IsChecked="False" Content="Disable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource disable}" Height="38" Width="125" Margin="40,0,0,0" Click="rdDisableFix_Click"/>
                                     <RadioButton x:Name="rdEnableFix" IsChecked="True" Content="Enable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource enable}" Height="38" Width="125" Margin="20,0,0,0" Click="rdEnableFix_Click"/>
                                 </StackPanel>
-                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,10,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Disables/enables services that cause the power lock bug on Flow Z13 devices.</TextBlock>
-                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Disable before system shutdown and re-enable after selecting a power profile from below.</TextBlock>
-                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Leave at least 20-30 seconds after reboot and selecting a power profile before re-enabling these services.</TextBlock>
+                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Automatically disables/enables services that cause the power lock bug on Flow Z13 devices.</TextBlock>
                             </StackPanel>
                         </Border>
 
-                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8">
+                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8">
                             <StackPanel>
                                 <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">START ON BOOT:</TextBlock>
                                 <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" >
                                     <RadioButton x:Name="rdDisableBoot" IsChecked="True" Content="Disable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource enable}" Height="38" Width="125" Margin="40,0,0,0" Click="rdDisableBoot_Click"/>
                                     <RadioButton x:Name="rdEnableBoot" IsChecked="False" Content="Enable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource disable}" Height="38" Width="125" Margin="20,0,0,0" Click="rdEnableBoot_Click"/>
                                 </StackPanel>
-                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,10,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Toggle ROG Flow Control's ability to start on boot.</TextBlock>
+                                <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Toggle ROG Flow Control's ability to start on boot.</TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8">
+                            <StackPanel>
+                                <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">REFRESH RATE:</TextBlock>
+                                <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" >
+                                    <RadioButton x:Name="rdLowHz" IsChecked="False" Content="60Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource plant}" Height="38" Width="125" Margin="40,0,0,0"/>
+                                    <RadioButton x:Name="rdHighHz" IsChecked="True" Content="120Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource speed}" Height="38" Width="125" Margin="20,0,0,0"/>
+                                </StackPanel>
+                              
                             </StackPanel>
                         </Border>
                     </StackPanel>

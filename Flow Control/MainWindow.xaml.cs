@@ -126,5 +126,9 @@ namespace Flow_Control
         {
             WindowState = WindowState.Minimized;
         }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 }
