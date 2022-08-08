@@ -82,5 +82,17 @@ namespace Flow_Control.Properties {
                 this["PowerFix"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int BatLimit {
+            get {
+                return ((int)(this["BatLimit"]));
+            }
+            set {
+                this["BatLimit"] = value;
+            }
+        }
     }
 }

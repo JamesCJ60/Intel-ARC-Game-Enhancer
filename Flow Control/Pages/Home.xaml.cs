@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Flow_Control.Scripts;
 using Flow_Control.Properties;
 using AATUV3.Scripts;
+using UXTU.Scripts.Intel;
 
 namespace Flow_Control.Pages
 {
@@ -62,6 +63,9 @@ namespace Flow_Control.Pages
             else if (Settings.Default.ACProfile == 1) rdPerf.IsChecked = true;
             else if (Settings.Default.ACProfile == 2) rdTurbo.IsChecked = true;
             else if (Settings.Default.ACProfile == 3) rdMan.IsChecked = true;
+
+            tbBatPercent.Value = Settings.Default.BatLimit;
+            setBatteryLimit();
         }
 
         public async void switchProfile(int ACProfile)
@@ -133,6 +137,52 @@ namespace Flow_Control.Pages
             Settings.Default.Save();
             DeviceHelper.SetDeviceEnabled(DLAHI_GUID, DLAHI_Instance, true);
             DeviceHelper.SetDeviceEnabled(DTTDE_GUID, DTTDE_Instance, true);
+        }
+
+        private void rdDisableBoot_Click(object sender, RoutedEventArgs e)
+        {
+            rdEnableBoot.Tag = FindResource("disable");
+            rdDisableBoot.Tag = FindResource("enable");
+            //Settings.Default.PowerFix = false;
+            //Settings.Default.Save();
+        }
+
+        private void rdEnableBoot_Click(object sender, RoutedEventArgs e)
+        {
+            rdEnableBoot.Tag = FindResource("enable");
+            rdDisableBoot.Tag = FindResource("disable");
+            //Settings.Default.PowerFix = true;
+            //Settings.Default.Save();
+        }
+
+        private void tbDisplayPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblDisplayPercent.Text = ((int)tbDisplayPercent.Value).ToString() + "%";
+        }
+
+        private void tbVolPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblVolPercent.Text = ((int)tbVolPercent.Value).ToString() + "%";
+        }
+
+        private void tbBatPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            lblBatPercent.Text = ((int)tbBatPercent.Value).ToString() + "%";
+        }
+
+        private void tbBatPercent_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            setBatteryLimit();
+        }
+
+        private async void setBatteryLimit()
+        {
+            string value = ((int)tbBatPercent.Value).ToString();
+
+            Settings.Default.BatLimit = (int)tbBatPercent.Value;
+            Settings.Default.Save();
+
+            if ((int)tbBatPercent.Value >= 50 && Convert.ToInt32(value) >= 50) await Task.Run(() => RunCLI.RunPowerShellCommand($"Powershell.exe (Get-WmiObject -Namespace root/WMI -Class AsusAtkWmi_WMNB).DEVS(0x00120057, {value})", false));
         }
     }
 }

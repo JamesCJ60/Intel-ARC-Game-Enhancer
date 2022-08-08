@@ -92,8 +92,8 @@
     <Compile Include="Pages\RGBControl.xaml.cs">
       <DependentUpon>RGBControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
+    <Compile Include="Pages\SettingsMenu.xaml.cs">
+      <DependentUpon>SettingsMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\AMD Backend\Addresses.cs" />
     <Compile Include="Scripts\AMD Backend\Families.cs" />
@@ -146,7 +146,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Settings.xaml">
+    <Page Include="Pages\SettingsMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -217,6 +217,10 @@
     <Resource Include="Assets\ACProfiles\Silent.png" />
     <Resource Include="Assets\ACProfiles\Turbo.png" />
     <Resource Include="Assets\ACProfiles\Windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\lightbulb-flash-line.png" />
+    <Resource Include="Assets\Icons\volume-up-line.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

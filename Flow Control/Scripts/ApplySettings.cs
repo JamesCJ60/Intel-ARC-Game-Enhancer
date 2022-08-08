@@ -38,7 +38,7 @@ namespace Flow_Control.Scripts
             BasicExeBackend.ApplySettings(atrofacPath, atrofacArgs, true);
 
 
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(2000);
 
 
             if (GetSystemInfo.GetCPUName().Contains("AMD"))
@@ -67,7 +67,7 @@ namespace Flow_Control.Scripts
                 await Task.Run(() => ChangeTDP.changeTDP(pl1, pl2));
             }
 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(2000);
 
             string path = "\\bin\\oc.exe";
             //Pass settings on to be applied

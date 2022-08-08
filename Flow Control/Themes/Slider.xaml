@@ -10,7 +10,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border  BorderThickness="0" BorderBrush="Black" Background="#525252" Height="4" CornerRadius="2"/>
+                    <Border  BorderThickness="0" BorderBrush="Black" Background="{DynamicResource SecundaryGrayColor}" Height="6" CornerRadius="3"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -22,7 +22,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border SnapsToDevicePixels="True" Background="{DynamicResource PrimaryBlueColor}"  BorderThickness="0" BorderBrush="Gray" Height="4" CornerRadius="2,0,0,2"/>
+                    <Border SnapsToDevicePixels="True" Background="{DynamicResource PrimaryBlueColor}"  BorderThickness="0" BorderBrush="{DynamicResource SecundaryGrayColor}" Height="6" CornerRadius="3,0,0,3"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -35,7 +35,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
                     <!--Add name to ellipse to use in  controltemplate triggers-->
-                    <Ellipse x:Name="Ellipse" Height="16" Width="22" Fill="#e1e1e1"></Ellipse>
+                    <Ellipse x:Name="Ellipse" Height="20" Width="20" Fill="#e1e1e1"></Ellipse>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter TargetName="Ellipse" Property="Fill" Value="#c7c7c7"></Setter>

@@ -18,9 +18,9 @@ namespace Flow_Control.Pages
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
-    public partial class Settings : Page
+    public partial class SettingsMenu : Page
     {
-        public Settings()
+        public SettingsMenu()
         {
             InitializeComponent();
         }
