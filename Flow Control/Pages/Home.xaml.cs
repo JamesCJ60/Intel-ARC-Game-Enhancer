@@ -19,6 +19,7 @@ using AATUV3.Scripts;
 using UXTU.Scripts.Intel;
 using Microsoft.Win32;
 using System.Management;
+using System.Windows.Threading;
 
 namespace Flow_Control.Pages
 {
@@ -41,11 +42,11 @@ namespace Flow_Control.Pages
                 rdEnableFix.Tag = FindResource("enable");
                 rdDisableFix.Tag = FindResource("disable");
             }
-            else 
+            else
             {
                 rdEnableFix.Tag = FindResource("disable");
                 rdDisableFix.Tag = FindResource("enable");
-                rdDisableFix.IsChecked = true; 
+                rdDisableFix.IsChecked = true;
             }
 
             if (Settings.Default.Boot == true)
@@ -65,7 +66,7 @@ namespace Flow_Control.Pages
             lbliGPUName.Text = GetSystemInfo.GetiGPUName().Replace("(R)", null);
             lbldGPUName.Text = GetSystemInfo.GetdGPUName().Replace("Laptop GPU", null);
 
-            if(GetSystemInfo.GetdGPUName() == null || GetSystemInfo.GetdGPUName() == "")
+            if (GetSystemInfo.GetdGPUName() == null || GetSystemInfo.GetdGPUName() == "")
             {
                 dGPUName.Visibility = Visibility.Collapsed;
             }
@@ -87,6 +88,50 @@ namespace Flow_Control.Pages
             tbDisplayPercent.Value = Convert.ToUInt32(GetSystemInfo.brightness);
 
             BasicExeBackend.Garbage_Collect();
+
+            lblCPUFan.Text = $"{CPUFanSpeed()} RPM";
+            lblGPUFan.Text = $"{GPUFanSpeed()} RPM";
+
+            //set up timer for sensor update
+            DispatcherTimer sensor = new DispatcherTimer();
+            sensor.Interval = TimeSpan.FromSeconds(2);
+            sensor.Tick += SensorUpdate_Tick;
+            sensor.Start();
+        }
+
+        void SensorUpdate_Tick(object sender, EventArgs e)
+        {
+            if (Menu1.Visibility == Visibility.Visible)
+            {
+                lblCPUFan.Text = $"{CPUFanSpeed()} RPM";
+                lblGPUFan.Text = $"{GPUFanSpeed()} RPM";
+            }
+        }
+
+        public static string GPUFanSpeed()
+        {
+            string gpuFan = RunCLI.RunCommand("Powershell.exe (Get-WmiObject -Namespace root/WMI -Class AsusAtkWmi_WMNB).DSTS(0x00110014)", true);
+            var result = gpuFan.Split('\n');
+            string output = result[12].Substring(result[12].IndexOf(':') + 2);
+            int gpuSpeed = Convert.ToInt32(output);
+            string hexValue = gpuSpeed.ToString("X");
+
+            uint fanSpeed = Convert.ToUInt32(hexValue, 16);
+            fanSpeed = (fanSpeed - 0x00010000) * 0x64;
+            return fanSpeed.ToString();
+        }
+
+        public static string CPUFanSpeed()
+        {
+            string cpuFan = RunCLI.RunCommand("Powershell.exe (Get-WmiObject -Namespace root/WMI -Class AsusAtkWmi_WMNB).DSTS(0x00110013)", true);
+            var result = cpuFan.Split('\n');
+            string output = result[12].Substring(result[12].IndexOf(':') + 2);
+            int cpuSpeed = Convert.ToInt32(output);
+            string hexValue = cpuSpeed.ToString("X");
+
+            uint fanSpeed = Convert.ToUInt32(hexValue, 16);
+            fanSpeed = (fanSpeed - 0x00010000) * 0x64;
+            return fanSpeed.ToString();
         }
 
         public async void switchProfile(int ACProfile)

@@ -67,7 +67,7 @@ namespace Flow_Control.Scripts
                 await Task.Run(() => ChangeTDP.changeTDP(pl1, pl2));
             }
 
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(10000);
 
             string path = "\\bin\\oc.exe";
             //Pass settings on to be applied
