@@ -228,5 +228,13 @@
     <Resource Include="Assets\Icons\lightbulb-flash-line.png" />
     <Resource Include="Assets\Icons\volume-up-line.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\battery-2-charge-line.png" />
+    <Resource Include="Assets\Icons\pulse-line.png" />
+    <Resource Include="Assets\Icons\temp-cold-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Icons\percent-line.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

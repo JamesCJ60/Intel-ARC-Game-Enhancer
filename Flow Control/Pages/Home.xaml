@@ -9,17 +9,18 @@
       Title="Home">
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Bottom" Width="400" Height="50" HorizontalAlignment="Right" Margin="0,0,0,10" Visibility="Hidden">
+            <StackPanel DockPanel.Dock="Bottom" Width="400" Height="50" HorizontalAlignment="Right" Margin="0,0,0,10" Visibility="Visible">
                 <Border DockPanel.Dock="Bottom" Height="50" Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,0,12, 0">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-
+                        <RadioButton x:Name="PrevMenu" IsChecked="True" Style="{DynamicResource IconButton}" Tag="{DynamicResource left}" Height="50" Width="150" Margin="0,0,0,0" Click="PrevMenu_Click"/>
+                        <RadioButton x:Name="rdNextMenu" IsChecked="False" Style="{DynamicResource IconButton}" Tag="{DynamicResource right}" Height="50" Width="150" Margin="40,0,0,0" Click="rdNextMenu_Click"/>
                     </StackPanel>
                 </Border>
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" Width="400">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel x:Name="MainContainer">
-                        <StackPanel x:Name="Menu1">
+                        <StackPanel x:Name="Menu1" Visibility="Visible">
                             <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">SYSTEM SPECS:</TextBlock>
@@ -107,12 +108,109 @@
                             </Border>
                         </StackPanel>
                         <StackPanel x:Name="Menu2" Visibility="Collapsed">
-                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8">
+
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
+                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">SYSTEM FANS:</TextBlock>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/cpu-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">CPU RPM:</TextBlock>
+                                        <TextBlock Name="lblMenu2CPUFan" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/cpu-fill.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">GPU RPM:</TextBlock>
+                                        <TextBlock Name="lblMenu2GPUFan" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
+                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">CPU SENSORS:</TextBlock>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Clock:</TextBlock>
+                                        <TextBlock Name="lblCPUClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/percent-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Usage:</TextBlock>
+                                        <TextBlock Name="lblCPUUsage" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/temp-hot-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Temp:</TextBlock>
+                                        <TextBlock Name="lblCPUTemp" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/flashlight-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Volt:</TextBlock>
+                                        <TextBlock Name="lblCPUVolt" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/battery-2-charge-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Power:</TextBlock>
+                                        <TextBlock Name="lblCPUPower" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
+                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">GPU SENSORS:</TextBlock>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Core:</TextBlock>
+                                        <TextBlock Name="lblGPUClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Memory:</TextBlock>
+                                        <TextBlock Name="lblGPUMemClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/percent-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Usage:</TextBlock>
+                                        <TextBlock Name="lblGPUUsage" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/temp-hot-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Temp:</TextBlock>
+                                        <TextBlock Name="lblGPUTemp" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Visibility="Collapsed">
+                                        <Image Source="pack://application:,,,/Assets/Icons/flashlight-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Volt:</TextBlock>
+                                        <TextBlock Name="lblGPUVolt" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Image Source="pack://application:,,,/Assets/Icons/battery-2-charge-line.png" Width="24"></Image>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Power:</TextBlock>
+                                        <TextBlock Name="lblGPUPower" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                            
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8" Visibility="Collapsed">
                                 <StackPanel>
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">REFRESH RATE:</TextBlock>
                                     <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" >
-                                        <RadioButton x:Name="rdLowHz" IsChecked="False" Content="60Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource plant}" Height="38" Width="125" Margin="40,0,0,0"/>
-                                        <RadioButton x:Name="rdHighHz" IsChecked="True" Content="120Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource speed}" Height="38" Width="125" Margin="20,0,0,0"/>
+                                        <RadioButton x:Name="rdLowHz" IsChecked="False" Content="60Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource plant}" Height="38" Width="125" Margin="40,0,0,0" Click="rdLowHz_Click"/>
+                                        <RadioButton x:Name="rdHighHz" IsChecked="True" Content="120Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource speed}" Height="38" Width="125" Margin="20,0,0,0" Click="rdHighHz_Click"/>
                                     </StackPanel>
 
                                 </StackPanel>

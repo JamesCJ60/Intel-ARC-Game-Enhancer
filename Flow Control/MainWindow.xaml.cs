@@ -49,6 +49,8 @@ namespace Flow_Control
                 this.Close();
             }
 
+            GetSystemInfo.start();
+
             //Get current directory
             if (Settings.Default["Path"].ToString() == "" || Settings.Default["Path"].ToString() == null || Settings.Default["Path"].ToString().Contains("System32"))
             {

@@ -20,6 +20,7 @@ using UXTU.Scripts.Intel;
 using Microsoft.Win32;
 using System.Management;
 using System.Windows.Threading;
+using System.Diagnostics;
 
 namespace Flow_Control.Pages
 {
@@ -91,20 +92,74 @@ namespace Flow_Control.Pages
 
             lblCPUFan.Text = $"{CPUFanSpeed()} RPM";
             lblGPUFan.Text = $"{GPUFanSpeed()} RPM";
+            lblMenu2CPUFan.Text = $"{CPUFanSpeed()} RPM";
+            lblMenu2GPUFan.Text = $"{GPUFanSpeed()} RPM";
+
+            GetSystemInfo.GetdGPUStats();
+            GetSystemInfo.getCPUStats();
+
+            lblGPUClock.Text = $"{GetSystemInfo.dGPUClock}MHz";
+            lblGPUMemClock.Text = $"{GetSystemInfo.dGPUMemClock}MHz";
+            lblGPUTemp.Text = $"{GetSystemInfo.dGPUTemp}°C";
+            lblGPUPower.Text = $"{GetSystemInfo.dGPUPower}W";
+            lblGPUUsage.Text = $"{GetSystemInfo.dGPULoad}%";
+
+            lblCPUClock.Text = $"{GetSystemInfo.cpuClock}MHz";
+            lblCPUTemp.Text = $"{GetSystemInfo.cpuTemp}°C";
+            lblCPUUsage.Text = $"{GetSystemInfo.cpuLoad}%";
+            lblCPUVolt.Text = $"{(int)GetSystemInfo.cpuVolt}mV";
+            lblCPUPower.Text = $"{GetSystemInfo.cpuPower}W";
 
             //set up timer for sensor update
             DispatcherTimer sensor = new DispatcherTimer();
             sensor.Interval = TimeSpan.FromSeconds(2);
             sensor.Tick += SensorUpdate_Tick;
             sensor.Start();
+
+            GetDisplayLimits();
         }
 
-        void SensorUpdate_Tick(object sender, EventArgs e)
+        public static int highHz = 0;
+        public static int lowHz = 0;
+
+        async void SensorUpdate_Tick(object sender, EventArgs e)
         {
             if (Menu1.Visibility == Visibility.Visible)
             {
                 lblCPUFan.Text = $"{CPUFanSpeed()} RPM";
                 lblGPUFan.Text = $"{GPUFanSpeed()} RPM";
+            }
+
+            if(Menu2.Visibility == Visibility.Visible)
+            {
+                lblMenu2CPUFan.Text = $"{CPUFanSpeed()} RPM";
+                lblMenu2GPUFan.Text = $"{GPUFanSpeed()} RPM";
+
+                await Task.Run(() => GetSystemInfo.GetdGPUStats());
+                await Task.Run(() => GetSystemInfo.getCPUStats());
+
+                lblGPUClock.Text = $"{GetSystemInfo.dGPUClock}MHz";
+                lblGPUMemClock.Text = $"{GetSystemInfo.dGPUMemClock}MHz";
+                lblGPUTemp.Text = $"{GetSystemInfo.dGPUTemp}°C";
+                lblGPUPower.Text = $"{GetSystemInfo.dGPUPower}W";
+                lblGPUUsage.Text = $"{GetSystemInfo.dGPULoad}%";
+
+                lblCPUClock.Text = $"{GetSystemInfo.cpuClock}MHz";
+                lblCPUTemp.Text = $"{GetSystemInfo.cpuTemp}°C";
+                lblCPUUsage.Text = $"{GetSystemInfo.cpuLoad}%";
+                lblCPUVolt.Text = $"{(int)GetSystemInfo.cpuVolt}mV";
+                lblCPUPower.Text = $"{GetSystemInfo.cpuPower}W";
+            }
+
+            var memory = 0.0;
+            using (Process proc = Process.GetCurrentProcess())
+            {
+                memory = proc.PrivateMemorySize64 / (1024 * 1024);
+            }
+
+            if(memory > 200)
+            {
+                BasicExeBackend.Garbage_Collect();
             }
         }
 
@@ -291,6 +346,64 @@ namespace Flow_Control.Pages
             Settings.Default.Save();
 
             if ((int)tbBatPercent.Value >= 50 && Convert.ToInt32(value) >= 50) await Task.Run(() => RunCLI.RunPowerShellCommand($"Powershell.exe (Get-WmiObject -Namespace root/WMI -Class AsusAtkWmi_WMNB).DEVS(0x00120057, {value})", false));
+        }
+
+        int MenuCount = 2;
+        int CurrentMenu = 1;
+        private void PrevMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentMenu > 1)
+            {
+                CurrentMenu--;
+            }
+            if (CurrentMenu == 1) Menu1.Visibility = Visibility.Visible; else Menu1.Visibility = Visibility.Collapsed;
+            if (CurrentMenu == 2) Menu2.Visibility = Visibility.Visible; else Menu2.Visibility = Visibility.Collapsed;
+        }
+
+        private void rdNextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentMenu < MenuCount)
+            {
+                CurrentMenu++;
+            }
+            if (CurrentMenu == 1) Menu1.Visibility = Visibility.Visible; else Menu1.Visibility = Visibility.Collapsed;
+            if (CurrentMenu == 2) Menu2.Visibility = Visibility.Visible; else Menu2.Visibility = Visibility.Collapsed;
+        }
+
+        
+
+        public void GetDisplayLimits()
+        {
+            int screenHeight = (int)System.Windows.SystemParameters.PrimaryScreenHeight;
+            if (lblDeviceName.Text.Contains("FLOW Z13") && screenHeight > 1600 || lblDeviceName.Text.Contains("FLOW Z13") && screenHeight > 1600)
+            {
+                highHz = 60;
+                lowHz = 60;
+            }
+            else
+            {
+                highHz = 120;
+                lowHz = 60;
+            }
+
+            if (lblDeviceName.Text.Contains("FLOW X16"))
+            {
+                highHz = 165;
+                lowHz = 60;
+            }
+
+            rdHighHz.Content = $"{highHz}Hz";
+            rdLowHz.Content = $"{lowHz}Hz";
+        }
+
+        private void rdLowHz_Click(object sender, RoutedEventArgs e)
+        {
+            BasicExeBackend.ApplySettings("\\bin\\CSR.exe", $"/f={lowHz}", true);
+        }
+
+        private void rdHighHz_Click(object sender, RoutedEventArgs e)
+        {
+            BasicExeBackend.ApplySettings("\\bin\\CSR.exe", $"/f={highHz}", true);
         }
     }
 }
