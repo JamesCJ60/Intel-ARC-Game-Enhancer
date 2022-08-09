@@ -157,7 +157,7 @@ namespace Flow_Control.Pages
                 memory = proc.PrivateMemorySize64 / (1024 * 1024);
             }
 
-            if(memory > 200)
+            if(memory > 195)
             {
                 BasicExeBackend.Garbage_Collect();
             }

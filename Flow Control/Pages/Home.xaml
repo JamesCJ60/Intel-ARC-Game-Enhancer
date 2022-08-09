@@ -132,31 +132,31 @@
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Clock:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">CLOCK:</TextBlock>
                                         <TextBlock Name="lblCPUClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/percent-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Usage:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">USAGE:</TextBlock>
                                         <TextBlock Name="lblCPUUsage" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/temp-hot-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Temp:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">TEMP:</TextBlock>
                                         <TextBlock Name="lblCPUTemp" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/flashlight-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Volt:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">VOLT:</TextBlock>
                                         <TextBlock Name="lblCPUVolt" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/battery-2-charge-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Power:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">POWER:</TextBlock>
                                         <TextBlock Name="lblCPUPower" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
                                 </StackPanel>
@@ -168,38 +168,38 @@
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Core:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">CORE:</TextBlock>
                                         <TextBlock Name="lblGPUClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/pulse-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Memory:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">MEMORY:</TextBlock>
                                         <TextBlock Name="lblGPUMemClock" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/percent-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Usage:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">USAGE:</TextBlock>
                                         <TextBlock Name="lblGPUUsage" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/temp-hot-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Temp:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">TEMP:</TextBlock>
                                         <TextBlock Name="lblGPUTemp" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0" Visibility="Collapsed">
                                         <Image Source="pack://application:,,,/Assets/Icons/flashlight-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Volt:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">VOLT:</TextBlock>
                                         <TextBlock Name="lblGPUVolt" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
 
                                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                         <Image Source="pack://application:,,,/Assets/Icons/battery-2-charge-line.png" Width="24"></Image>
-                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">Power:</TextBlock>
+                                        <TextBlock MinWidth="49" FontFamily="Asus Rog" FontSize="16" Foreground="White" TextAlignment="left" VerticalAlignment="Center" Margin="5,0,0,0">POWER:</TextBlock>
                                         <TextBlock Name="lblGPUPower" Foreground="White" VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Margin="10,0,0,0" FontFamily="Arial"></TextBlock>
                                     </StackPanel>
                                 </StackPanel>
