@@ -84,18 +84,19 @@
                                     </StackPanel>
                                 </StackPanel>
                             </Border>
-                            
-                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8" Name="PowerFix">
+                           
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8">
                                 <StackPanel>
-                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">POWER BUG FIX:</TextBlock>
+                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">GPU CONTROL:</TextBlock>
                                     <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" HorizontalAlignment="Center">
-                                        <RadioButton x:Name="rdDisableFix" IsChecked="False" Content="Disable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource disable}" Height="38" Width="125" Margin="0,0,0,0" Click="rdDisableFix_Click"/>
-                                        <RadioButton x:Name="rdEnableFix" IsChecked="True" Content="Enable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource enable}" Height="38" Width="125" Margin="30,0,0,0" Click="rdEnableFix_Click"/>
+                                        <RadioButton x:Name="rdMenu1LP" IsChecked="False" Content="iGPU" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource plant}" Height="38" Width="100" Click="rdMenu1LP_Click" Margin="10,0,0,0"/>
+                                        <RadioButton x:Name="rdMenu1HP" IsChecked="True" Content=" GPU" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource speed}" Height="38" Width="100" Click="rdMenu1HP_Click" Margin="10,0,10,0"/>
+                                        <RadioButton x:Name="rdMenu1Auto" IsChecked="True" Content=" Auto" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource bal}" Height="38" Width="100" Click="rdMenu1Auto_Click" Margin="0,0,10,0" />
                                     </StackPanel>
-                                    <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Automatically disables/enables services that cause the power lock bug on Flow Z13 devices.</TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Toggles Windows' control over GPU task scheduling. Will restart GPUs to force selection change which may cause apps/games using a GPU to crash.</TextBlock>
                                 </StackPanel>
                             </Border>
-
+                            
                             <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8">
                                 <StackPanel>
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">START ON BOOT:</TextBlock>
@@ -106,6 +107,7 @@
                                     <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Toggle ROG Flow Control's ability to start on boot.</TextBlock>
                                 </StackPanel>
                             </Border>
+
                         </StackPanel>
                         <StackPanel x:Name="Menu2" Visibility="Collapsed">
 
@@ -126,7 +128,7 @@
                                 </StackPanel>
                             </Border>
 
-                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">CPU SENSORS:</TextBlock>
 
@@ -162,7 +164,7 @@
                                 </StackPanel>
                             </Border>
 
-                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0">
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0">
                                 <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="8">
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="24">GPU SENSORS:</TextBlock>
 
@@ -205,7 +207,7 @@
                                 </StackPanel>
                             </Border>
                             
-                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,12,12,0" Padding="8" Visibility="Collapsed">
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8" Visibility="Collapsed">
                                 <StackPanel>
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">REFRESH RATE:</TextBlock>
                                     <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" >
@@ -213,6 +215,17 @@
                                         <RadioButton x:Name="rdHighHz" IsChecked="True" Content="120Hz" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource speed}" Height="38" Width="125" Margin="20,0,0,0" Click="rdHighHz_Click"/>
                                     </StackPanel>
 
+                                </StackPanel>
+                            </Border>
+
+                            <Border Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="10" Margin="12,10,12,0" Padding="8" Name="PowerFix">
+                                <StackPanel>
+                                    <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">POWER BUG FIX:</TextBlock>
+                                    <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" HorizontalAlignment="Center">
+                                        <RadioButton x:Name="rdDisableFix" IsChecked="False" Content="Disable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource disable}" Height="38" Width="125" Margin="0,0,0,0" Click="rdDisableFix_Click"/>
+                                        <RadioButton x:Name="rdEnableFix" IsChecked="True" Content="Enable" Style="{DynamicResource SmallToggles}" Tag="{DynamicResource enable}" Height="38" Width="125" Margin="30,0,0,0" Click="rdEnableFix_Click"/>
+                                    </StackPanel>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Automatically disables/enables services that cause the power lock bug on Flow Z13 devices.</TextBlock>
                                 </StackPanel>
                             </Border>
                         </StackPanel>

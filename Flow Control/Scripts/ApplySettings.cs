@@ -18,6 +18,8 @@ namespace Flow_Control.Scripts
         {
             string fileToLoad = "";
             string acMode = "";
+            string atrofacPath = "\\bin\\atrofac\\atrofac-cli.exe";
+            string atrofacArgs = "";
 
             if (ACProfile == 0) fileToLoad = "Silent.txt";
             else if (ACProfile == 1) fileToLoad = "Perf.txt";
@@ -32,13 +34,19 @@ namespace Flow_Control.Scripts
 
             var lines = File.ReadAllLines(filePath);
 
-            string atrofacArgs = $"fan --plan {acMode} --cpu 30c:{lines[1]}%,40c:{lines[2]}%,50c:{lines[3]}%,60c:{lines[4]}%,70c:{lines[5]}%,80c:{lines[6]}%,90c:{lines[7]}%,100c:{lines[8]}% --gpu 30c:{lines[11]}%,40c:{lines[12]}%,50c:{lines[13]}%,60c:{lines[14]}%,70c:{lines[15]}%,80c:{lines[16]}%,90c:{lines[17]}%,100c:{lines[18]}%";
+            atrofacArgs = $"--plan {acMode}";
 
-            string atrofacPath = "\\bin\\atrofac\\atrofac-cli.exe";
+            System.Threading.Thread.Sleep(2000);
+
+            BasicExeBackend.ApplySettings(atrofacPath, atrofacArgs, true);
+
+            atrofacArgs = $"fan --plan {acMode} --cpu 30c:{lines[1]}%,40c:{lines[2]}%,50c:{lines[3]}%,60c:{lines[4]}%,70c:{lines[5]}%,80c:{lines[6]}%,90c:{lines[7]}%,100c:{lines[8]}% --gpu 30c:{lines[11]}%,40c:{lines[12]}%,50c:{lines[13]}%,60c:{lines[14]}%,70c:{lines[15]}%,80c:{lines[16]}%,90c:{lines[17]}%,100c:{lines[18]}%";
+
+            
             BasicExeBackend.ApplySettings(atrofacPath, atrofacArgs, true);
 
 
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(2000);
 
 
             if (GetSystemInfo.GetCPUName().Contains("AMD"))
@@ -67,7 +75,7 @@ namespace Flow_Control.Scripts
                 await Task.Run(() => ChangeTDP.changeTDP(pl1, pl2));
             }
 
-            System.Threading.Thread.Sleep(10000);
+            System.Threading.Thread.Sleep(2000);
 
             string path = "\\bin\\oc.exe";
             //Pass settings on to be applied

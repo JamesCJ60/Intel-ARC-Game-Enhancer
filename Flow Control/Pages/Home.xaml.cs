@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using AudioSwitcher.AudioApi.CoreAudio;
+//using AudioSwitcher.AudioApi.CoreAudio;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -82,6 +82,10 @@ namespace Flow_Control.Pages
             else if (Settings.Default.ACProfile == 2) rdTurbo.IsChecked = true;
             else if (Settings.Default.ACProfile == 3) rdMan.IsChecked = true;
 
+            if (Settings.Default.GPUOption == 0) rdMenu1Auto.IsChecked = true;
+            else if (Settings.Default.GPUOption == 1) rdMenu1LP.IsChecked = true;
+            else if (Settings.Default.GPUOption == 2) rdMenu1HP.IsChecked = true;
+
             tbBatPercent.Value = Settings.Default.BatLimit;
             setBatteryLimit();
 
@@ -130,7 +134,7 @@ namespace Flow_Control.Pages
                 lblGPUFan.Text = $"{GPUFanSpeed()} RPM";
             }
 
-            if(Menu2.Visibility == Visibility.Visible)
+            if (Menu2.Visibility == Visibility.Visible)
             {
                 lblMenu2CPUFan.Text = $"{CPUFanSpeed()} RPM";
                 lblMenu2GPUFan.Text = $"{GPUFanSpeed()} RPM";
@@ -157,7 +161,7 @@ namespace Flow_Control.Pages
                 memory = proc.PrivateMemorySize64 / (1024 * 1024);
             }
 
-            if(memory > 195)
+            if (memory > 195)
             {
                 BasicExeBackend.Garbage_Collect();
             }
@@ -292,6 +296,22 @@ namespace Flow_Control.Pages
             key.SetValue("MyApplication", System.Reflection.Assembly.GetExecutingAssembly().Location.ToString());
         }
 
+
+        public void SetGPUOption(int gpuOption)
+        {
+            RegistryKey myKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\DirectX\\UserGpuPreferences", true);
+            if (myKey != null)
+            {
+                myKey.SetValue("", $"GpuPreference={gpuOption};", RegistryValueKind.String);
+                myKey.Close();
+            }
+
+            if(gpuOption > 0) BasicExeBackend.ApplySettings("\\bin\\RestartGPU.exe", $"", true);
+
+            Settings.Default.GPUOption = gpuOption;
+            Settings.Default.Save();
+        }
+
         private async void tbDisplayPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblDisplayPercent.Text = ((int)tbDisplayPercent.Value).ToString() + "%";
@@ -316,16 +336,16 @@ namespace Flow_Control.Pages
 
         private async void tbVolPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            lblVolPercent.Text = ((int)tbVolPercent.Value).ToString() + "%";
-            int newVolume = (int)tbVolPercent.Value;
-            await Task.Run(() =>
-            {
-                CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
-                //Set volume of current sound device
-                defaultPlaybackDevice.Volume = newVolume;
-                BasicExeBackend.Garbage_Collect();
-                return;
-            });
+            //lblVolPercent.Text = ((int)tbVolPercent.Value).ToString() + "%";
+            //int newVolume = (int)tbVolPercent.Value;
+            //await Task.Run(() =>
+            //{
+            //    CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+            //    //Set volume of current sound device
+            //    defaultPlaybackDevice.Volume = newVolume;
+            //    BasicExeBackend.Garbage_Collect();
+            //    return;
+            //});
         }
 
         private void tbBatPercent_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -370,7 +390,7 @@ namespace Flow_Control.Pages
             if (CurrentMenu == 2) Menu2.Visibility = Visibility.Visible; else Menu2.Visibility = Visibility.Collapsed;
         }
 
-        
+
 
         public void GetDisplayLimits()
         {
@@ -404,6 +424,21 @@ namespace Flow_Control.Pages
         private void rdHighHz_Click(object sender, RoutedEventArgs e)
         {
             BasicExeBackend.ApplySettings("\\bin\\CSR.exe", $"/f={highHz}", true);
+        }
+
+        private void rdMenu1LP_Click(object sender, RoutedEventArgs e)
+        {
+            SetGPUOption(1);
+        }
+
+        private void rdMenu1HP_Click(object sender, RoutedEventArgs e)
+        {
+            SetGPUOption(2);
+        }
+
+        private void rdMenu1Auto_Click(object sender, RoutedEventArgs e)
+        {
+            SetGPUOption(0);
         }
     }
 }
