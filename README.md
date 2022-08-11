@@ -1,6 +1,6 @@
 # ROG Flow Control
 
-![image](https://user-images.githubusercontent.com/20888782/183765492-b8a04561-4e46-4ee1-a94b-00303c093c8c.png)
+![image](https://user-images.githubusercontent.com/20888782/184178050-1d02a975-d28d-466d-bbad-74aa8edac513.png)
 
 This project is still very much a WORK IN PROGRESS!
 
