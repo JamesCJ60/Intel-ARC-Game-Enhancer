@@ -14,7 +14,7 @@ namespace Flow_Control.Scripts
 {
     internal class ApplySettings
     {
-        public static async void AppleACSettings(int ACProfile)
+        public static async void ApplyACSettings(int ACProfile)
         {
             string fileToLoad = "";
             string acMode = "";
@@ -63,6 +63,9 @@ namespace Flow_Control.Scripts
 
                 int CPUCO = Convert.ToInt32(lines[28]);
                 int iGPUCO = Convert.ToInt32(lines[29]);
+
+                if (CPUCO < 0) CPUCO = CPUCO * -1;
+                if (iGPUCO < 0) iGPUCO = iGPUCO * -1;
 
                 SendCommand.set_coall(Convert.ToUInt32(0x100000 - (uint)((int)CPUCO)));
                 SendCommand.set_cogfx(Convert.ToUInt32(0x100000 - (uint)((int)iGPUCO)));

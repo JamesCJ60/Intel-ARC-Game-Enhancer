@@ -90,10 +90,10 @@
                                     <TextBlock FontFamily="Asus Rog" Foreground="White" FontSize="26">GPU CONTROL:</TextBlock>
                                     <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0" HorizontalAlignment="Center">
                                         <RadioButton x:Name="rdMenu1LP" IsChecked="False" Content="iGPU" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource plant}" Height="38" Width="100" Click="rdMenu1LP_Click" Margin="10,0,0,0"/>
-                                        <RadioButton x:Name="rdMenu1HP" IsChecked="True" Content=" GPU" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource speed}" Height="38" Width="100" Click="rdMenu1HP_Click" Margin="10,0,10,0"/>
+                                        <RadioButton x:Name="rdMenu1HP" IsChecked="True" Content=" dGPU" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource speed}" Height="38" Width="100" Click="rdMenu1HP_Click" Margin="10,0,10,0"/>
                                         <RadioButton x:Name="rdMenu1Auto" IsChecked="True" Content=" Auto" Style="{DynamicResource SmallToggles2}" Tag="{DynamicResource bal}" Height="38" Width="100" Click="rdMenu1Auto_Click" Margin="0,0,10,0" />
                                     </StackPanel>
-                                    <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Toggles Windows' control over GPU task scheduling. Will restart GPUs to force selection change which may cause apps/games using a GPU to crash.</TextBlock>
+                                    <TextBlock TextWrapping="WrapWithOverflow" Margin="0,5,0,0" Foreground="White" FontSize="14" FontFamily="Arial" >Overrides Windows' control over GPU task scheduling. This will restart GPUs to enforce selection change which may cause apps/games using a GPU to crash.</TextBlock>
                                 </StackPanel>
                             </Border>
                             

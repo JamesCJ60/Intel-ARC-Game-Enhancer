@@ -215,7 +215,7 @@ namespace Flow_Control.Pages
             Settings.Default.ACProfile = ACProfile;
             Settings.Default.Save();
 
-            await Task.Run(() => ApplySettings.AppleACSettings(ACProfile));
+            await Task.Run(() => ApplySettings.ApplyACSettings(ACProfile));
             await Task.Run(() => ApplyFix());
         }
 
