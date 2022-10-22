@@ -9,6 +9,6 @@
       Title="ComingSoon">
 
     <Grid>
-        
+        <TextBlock Foreground="LightGray" FontSize="76" TextAlignment="Center" VerticalAlignment="Center" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">Coming Soon</TextBlock>
     </Grid>
 </Page>

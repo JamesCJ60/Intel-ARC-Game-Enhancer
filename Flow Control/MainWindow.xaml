@@ -5,38 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flow_Control"
         xmlns:interop="clr-namespace:Interop"
-        mc:Ignorable="d"
         interop:WindowBlur.IsEnabled="True"
+        mc:Ignorable="d"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStyle="None"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Title="ROG Flow Control" Height="720" Width="1250" Closing="Window_Closing">
+        Title="Intel® ARC™ Game Enhancer" Height="720" Width="1250" Closing="Window_Closing">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="-1" />
+        <WindowChrome GlassFrameThickness="-10" />
     </WindowChrome.WindowChrome>
-    <Border CornerRadius="10" BorderThickness="1" Background="#A0161616" Margin="0" Padding="0">
+    <Border BorderThickness="1" Background="#A0050d23" Margin="0" Padding="0">
         <Grid>
             <DockPanel Margin="0,0,0,0" LastChildFill="True">
-                <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="35" Margin="0,0,0,-1" Orientation="Horizontal">
-                    <Border Background="{DynamicResource SecundaryBackgroundColor}" CornerRadius="10,10,0,0">
+                <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="40" Orientation="Horizontal">
+                    <Border Background="{DynamicResource SecundaryBackgroundColor}">
                         <DockPanel Name="TopBarDockPanel" LastChildFill="False" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}">
-                            <TextBlock DockPanel.Dock="Left" Foreground="White" TextAlignment="Center" VerticalAlignment="Center" FontSize="18" Margin="10,0,0,0" FontFamily="Asus Rog">ROG FLOW CONTROL</TextBlock>
+                            <TextBlock DockPanel.Dock="Left" Foreground="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontSize="20.5" Margin="10,0,0,0" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">Intel® ARC™ Game Enhancer</TextBlock>
+                            <TextBlock DockPanel.Dock="Left" Foreground="LightGray" FontSize="20.5" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Center" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">-</TextBlock>
+                            <TextBlock Name="Title" DockPanel.Dock="Left" Foreground="LightGray" FontSize="20.5" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Center" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">test</TextBlock>
                             <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="32" Width="50" Margin="0,-7,0,0" Text="&#x2A2F;" Cursor="Hand" TextAlignment="Center" PreviewMouseUp="Close_PreviewMouseUp"/>
-                            <TextBlock DockPanel.Dock="Right" Foreground="#FF2D2D2D" FontSize="22" Width="50" Margin="0,3,0,0" Text="&#9634;" TextAlignment="Center"/>
                             <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="25" Width="50" Margin="0,-5,0,0" Text="&#128469;" Cursor="Hand" TextAlignment="Center" PreviewMouseUp="Minimise_PreviewMouseUp"/>
                         </DockPanel>
                     </Border>
                 </StackPanel>
-                <Border DockPanel.Dock="Left" Width="62" Background="{DynamicResource PrimaryBackgroundColor}" CornerRadius="0,0,0,10">
+                <Border DockPanel.Dock="Left" Width="62" Background="{DynamicResource PrimaryBackgroundColor}">
                     <StackPanel Orientation="Vertical">
-                        <RadioButton x:Name="rdHome" IsChecked="True" Content="Home" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource home}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton IsEnabled="False" x:Name="rdACPresets" IsChecked="False" Content="Presets" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource custom}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton IsEnabled="False" x:Name="rdRGB" IsChecked="False" Content="RGB" Style="{DynamicResource RGBControl}" Tag="{DynamicResource flash}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton IsEnabled="False" x:Name="rdInfo" IsChecked="False" Content="Info" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource info}" Height="50" Width="60" Margin="0,1,0,0" />
-                        <RadioButton IsEnabled="False" x:Name="rdSettings" IsChecked="False" Content="Settings" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource settings}" Height="50" Width="60" Margin="0,1,0,0" />
+                        <RadioButton x:Name="rdDXVK" IsChecked="True" Content="DXVK Improvements" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource speed}" Height="50" Width="60" Margin="0,1,0,0" Click="rdDXVK_Click" ToolTip="DXVK Improvements"/>
+                        <RadioButton x:Name="rdGamePatch" IsChecked="False" Content="Game Patches" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource patch}" Height="50" Width="60" Margin="0,1,0,0" Click="rdGamePatch_Click" ToolTip="Game Patches"/>
                     </StackPanel>
                 </Border>
                 <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">

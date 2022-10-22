@@ -18,9 +18,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Flow_Control.Properties;
-using Flow_Control.Scripts;
 using Interop;
-using RyzenSMUBackend;
+using MessageBox = System.Windows.MessageBox;
 
 namespace Flow_Control
 {
@@ -49,7 +48,19 @@ namespace Flow_Control
                 this.Close();
             }
 
-            GetSystemInfo.start();
+            var startColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#1e90ff");
+            var endColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#1ec8ff");
+
+            System.Windows.Application.Current.Resources["PrimaryBlueColor"] = new LinearGradientBrush(startColour.Color, endColour.Color, new Point(0, 1), new Point(1, 0));
+
+            startColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#5160ff");
+            endColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#51a9ff");
+
+            System.Windows.Application.Current.Resources["PrimaryBlueColorHover"] = new LinearGradientBrush(startColour.Color, endColour.Color, new Point(0, 0), new Point(1, 1));
+
+            startColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#0059d1");
+            endColour = (SolidColorBrush)new BrushConverter().ConvertFrom("#008dd1");
+            System.Windows.Application.Current.Resources["PrimaryBlueColorDown"] = new LinearGradientBrush(startColour.Color, endColour.Color, new Point(0, 0), new Point(1, 1));
 
             //Get current directory
             if (Settings.Default["Path"].ToString() == "" || Settings.Default["Path"].ToString() == null || Settings.Default["Path"].ToString().Contains("System32"))
@@ -57,67 +68,19 @@ namespace Flow_Control
                 //Get current path
                 var path = new Uri(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().CodeBase)).LocalPath;
 
-                //Save APU Name
-                Settings.Default["CPUName"] = System.Environment.GetEnvironmentVariable("PROCESSOR_IDENTIFIER");
-
-                //Save CPUID
-                ManagementClass managClass = new ManagementClass("win32_processor");
-                ManagementObjectCollection managCollec = managClass.GetInstances();
-
-                foreach (ManagementObject managObj in managCollec)
-                {
-                    Settings.Default["CPUID"] = managObj.Properties["processorID"].Value.ToString();
-                    break;
-                }
-
                 //Save path
                 Settings.Default["Path"] = path;
                 Settings.Default.Save();
             }
 
-            if (Settings.Default.CPUName.Contains("AMD") || Settings.Default.CPUName.Contains("Ryzen"))
-            {
-                Families.SetFam();
-            }
-
             InitializeComponent();
 
-            compatCheck();
-            
-
-            PagesNavigation.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
+            Title.Text = rdDXVK.Content.ToString();
+            PagesNavigation.Navigate(new System.Uri("Pages/DXVK.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        [DllImport("inpoutx64.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetPhysLong(UIntPtr memAddress, ref uint DData);
 
-        [DllImport("inpoutx64.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool IsInpOutDriverOpen();
 
-        [DllImport("inpoutx64.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetPhysLong(UIntPtr memAddress, uint DData);
-
-        public void compatCheck()
-        {
-            string deviceName = MotherboardInfo.Product;
-
-            if (!deviceName.Contains("Flow"))
-            {
-                System.Windows.Forms.DialogResult dialog = System.Windows.Forms.MessageBox.Show("Unsupported device detected! This program only works on ROG Flow devices", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (dialog == System.Windows.Forms.DialogResult.OK)
-                {
-                    Environment.Exit(0);
-
-                }
-                else if (dialog == System.Windows.Forms.DialogResult.None)
-                {
-                    Environment.Exit(0);
-                }
-            }
-        }
 
         private void Close_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
@@ -131,6 +94,18 @@ namespace Flow_Control
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
+        }
+
+        private void rdDXVK_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Text = rdDXVK.Content.ToString();
+            PagesNavigation.Navigate(new System.Uri("Pages/DXVK.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdGamePatch_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Text = rdGamePatch.Content.ToString();
+            PagesNavigation.Navigate(new System.Uri("Pages/ComingSoon.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

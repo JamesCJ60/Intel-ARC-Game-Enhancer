@@ -2,18 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- Background Colors -->
-    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#101010"/>
-    <SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#181818"/>
+    <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#050d23"/>
+    <SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#081539"/>
 
     <!-- Primary Colors -->
-    <SolidColorBrush x:Key="PrimaryBlueColor" Color="#FFBE0037"/>
-    <SolidColorBrush x:Key="PrimaryBlueColorHover" Color="#eb0045"/>
-    <SolidColorBrush x:Key="PrimaryBlueColorDown" Color="#750123"/>
-    <SolidColorBrush x:Key="PrimaryGrayColor" Color="White"/>
+    <LinearGradientBrush x:Key="PrimaryBlueColor" EndPoint="0,0" StartPoint="1,1"/>
+    <LinearGradientBrush x:Key="PrimaryBlueColorHover" EndPoint="0,0" StartPoint="1,1"/>
+    <LinearGradientBrush x:Key="PrimaryBlueColorDown" EndPoint="0,0" StartPoint="1,1"/>
+    <SolidColorBrush x:Key="PrimaryGrayColor" Color="LightGray"/>
 
     <!-- Secundary Colors -->
     <SolidColorBrush x:Key="SecundaryBlueColor" Color="#CEE8FB"/>
-    <SolidColorBrush x:Key="SecundaryGrayColor" Color="#181818"/>
+    <SolidColorBrush x:Key="SecundaryGrayColor" Color="#081539"/>
 
     <!-- Typograhy Colors -->
     <SolidColorBrush x:Key="TextPrimaryColor" Color="White"/>
