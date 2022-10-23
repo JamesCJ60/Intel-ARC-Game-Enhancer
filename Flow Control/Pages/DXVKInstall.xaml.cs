@@ -65,22 +65,32 @@ namespace Flow_Control.Pages
             string[] file = null;
             string fileToFind = lines[4];
             string drive = "F:\\SteamLibrary\\";
-            MessageBox.Show("Starting game location process. This may take sometime.");
-            file = await Task.Run(() => RecursiveSearch(drive, fileToFind));
 
-            if (file != null)
+            MessageBox.Show("Select any base directory that contains the game you are looking for within a storage device in the next menu, e.g. Steam library folder. \n\nThe process for handling this function will be imporved in the future.", "Game Installation Selection");
+
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = "::{20D04FE0-3AEA-1069-A2D8-08002B30309D}";
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                int bit = 32;
-                if (lines[28].Contains("32")) bit = 32; else bit = 64;
+                drive = dialog.FileName;
+                MessageBox.Show("Starting game location process. This may take sometime.", "Starting DXVK Installation");
+                file = await Task.Run(() => RecursiveSearch(drive, fileToFind));
 
-                string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                path = path + $"//x{bit}";
+                if (file != null)
+                {
+                    int bit = 32;
+                    if (lines[28].Contains("32")) bit = 32; else bit = 64;
 
-                Copy(path, file[0].Replace(fileToFind, null));
+                    string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                    path = path + $"//x{bit}";
 
-                MessageBox.Show("DXVK has been installed without issue.");
+                    Copy(path, file[0].Replace(fileToFind, null));
+
+                    MessageBox.Show("DXVK has been installed without issue.", "DXVK Installation Finished");
+                }
+                else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Finished");
             }
-            else MessageBox.Show($"Could not find {lines[4]} in install location provided.");
         }
 
         void Copy(string sourceDir, string targetDir)
