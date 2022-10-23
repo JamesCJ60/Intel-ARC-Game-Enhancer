@@ -1,0 +1,29 @@
+[Game Name]
+Far Cry 5
+
+[Random file within install directory where DXVK needs to be installed]
+FarCry5.exe
+
+[Game Description]
+Far Cry 5 is a 2018 first-person shooter, developed by Ubisoft Montreal and Ubisoft Toronto and published by Ubisoft. It is the successor to 2014's Far Cry 4, and the fifth main installment in the Far Cry series.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/5f123c605d90ec98e3b8544d49136c31.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Ubisoft, Ubisoft Montreal, Ubisoft Toronto, Ubisoft Shanghai, Ubisoft Kyiv, Red Storm
+
+[Release Date]
+26th March 2018
+
+[Genres]
+First-person shooter, Adventure game, Adventure
+
+[Game Executable]
+FarCry5.exe
+
+[64bit or 32bit]
+64bit

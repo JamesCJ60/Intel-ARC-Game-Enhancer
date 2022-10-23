@@ -1,0 +1,29 @@
+[Game Name]
+Far Cry 4
+
+[Random file within install directory where DXVK needs to be installed]
+FarCry4.exe
+
+[Game Description]
+Far Cry 4 is a 2014 first-person shooter game developed by Ubisoft Montreal and published by Ubisoft. It is the successor to the 2012 video game Far Cry 3, and the fourth main installment in the Far Cry series.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/0bf76a53f4021dd7bd49affd1419a2e7.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Ubisoft Montreal, Red Storm Entertainment
+
+[Release Date]
+18th November 2014
+
+[Genres]
+First-person shooter, Adventure game, Adventure
+
+[Game Executable]
+FarCry4.exe
+
+[64bit or 32bit]
+64bit

@@ -1,0 +1,29 @@
+[Game Name]
+Grand Theft Auto IV
+
+[Random file within install directory where DXVK needs to be installed]
+GTAIV.exe
+
+[Game Description]
+Grand Theft Auto IV is a 2008 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the sixth main entry in the Grand Theft Auto series, following 2004's Grand Theft Auto: San Andreas, and the eleventh instalment overall.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/d346256ad566cf97801e5cecc45a2557.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Rockstar North, Rockstar Toronto
+
+[Release Date]
+29th April 2008
+
+[Genres]
+Open world, Action-adventure game, Third-person shooter, Nonlinear gameplay
+
+[Game Executable]
+GTAIV.exe
+
+[64bit or 32bit]
+32bit
