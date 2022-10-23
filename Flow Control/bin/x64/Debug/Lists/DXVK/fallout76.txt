@@ -24,3 +24,6 @@ Action role-playing, Multiplayer
 
 [Game Executable]
 Fallout76.exe
+
+[64bit or 32bit]
+64bit

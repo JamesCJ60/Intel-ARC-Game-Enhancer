@@ -24,3 +24,6 @@ Action role-playing
 
 [Game Executable]
 FalloutNV.exe
+
+[64bit or 32bit]
+32bit

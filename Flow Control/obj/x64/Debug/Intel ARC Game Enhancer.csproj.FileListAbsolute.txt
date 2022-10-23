@@ -66,3 +66,12 @@ C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\I
 C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.CopyComplete
 C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.exe
 C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml

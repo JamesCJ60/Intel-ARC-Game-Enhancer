@@ -21,11 +21,11 @@
                     <StackPanel Orientation="Horizontal">
 
                         <StackPanel Margin="0,2,0,0">
-                            <RadioButton IsChecked="True" Content="Play Game" Style="{DynamicResource Buttons}" Tag="{DynamicResource play}" Height="45" Width="185" Margin="5,3,0,3" />
+                            <RadioButton Visibility="Collapsed" IsChecked="True" Content="Play Game" Style="{DynamicResource Buttons}" Tag="{DynamicResource play}" Height="45" Width="185" Margin="5,3,0,3" />
                         </StackPanel>
 
                         <StackPanel Margin="0,2,0,0">
-                            <RadioButton IsChecked="True" Content="Install DXVK" Style="{DynamicResource Buttons}" Tag="{DynamicResource install}" Height="45" Width="185" Margin="3,3,5,3" />
+                            <RadioButton IsChecked="True" Content="Install DXVK" Style="{DynamicResource Buttons}" Tag="{DynamicResource install}" Height="45" Width="185" Margin="5,3,5,3" Click="RadioButton_Click" />
                         </StackPanel>
                     </StackPanel>
                 </Border>

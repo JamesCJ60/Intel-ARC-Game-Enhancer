@@ -23,7 +23,7 @@
                 <StackPanel Name="TopBarStackPanel" DockPanel.Dock="Top" Height="40" Orientation="Horizontal">
                     <Border Background="{DynamicResource SecundaryBackgroundColor}">
                         <DockPanel Name="TopBarDockPanel" LastChildFill="False" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}}">
-                            <TextBlock DockPanel.Dock="Left" Foreground="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontSize="20.5" Margin="10,0,0,0" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">Intel® ARC™ Game Enhancer</TextBlock>
+                            <TextBlock DockPanel.Dock="Left" Foreground="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontSize="20.5" Margin="10,0,0,0" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">intel® ARC™ Game Enhancer</TextBlock>
                             <TextBlock DockPanel.Dock="Left" Foreground="LightGray" FontSize="20.5" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Center" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">-</TextBlock>
                             <TextBlock Name="Title" DockPanel.Dock="Left" Foreground="LightGray" FontSize="20.5" Margin="5,0,0,0" VerticalAlignment="Center" TextAlignment="Center" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">test</TextBlock>
                             <TextBlock DockPanel.Dock="Right" Foreground="#FF878787" FontSize="32" Width="50" Margin="0,-7,0,0" Text="&#x2A2F;" Cursor="Hand" TextAlignment="Center" PreviewMouseUp="Close_PreviewMouseUp"/>

@@ -25,3 +25,5 @@ Action role-playing
 [Game Executable]
 Fallout4.exe
 
+[64bit or 32bit]
+64bit

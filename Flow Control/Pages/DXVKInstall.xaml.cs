@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Reflection;
+using Path = System.IO.Path;
 
 namespace Flow_Control.Pages
 {
@@ -31,7 +35,17 @@ namespace Flow_Control.Pages
                 var lines = File.ReadAllLines(Scripts.GlobalVariables.txtFilePath);
 
                 GameName.Text = lines[1];
-                GameImage.Source = new BitmapImage(new Uri(lines[10]));
+
+                string image = "";
+
+                if (lines[10] == "" || !lines[10].Contains("https")) image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
+                else
+                {
+                    if (Scripts.GlobalVariables.IsConnectedToInternet() == true) image = lines[10];
+                    else image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
+                }
+
+                GameImage.Source = new BitmapImage(new Uri(image));
                 Description.Text = lines[7];
                 Developer.Text = lines[16];
                 API.Text = lines[13];
@@ -41,6 +55,57 @@ namespace Flow_Control.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private async void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            var lines = File.ReadAllLines(Scripts.GlobalVariables.txtFilePath);
+
+            string[] file = null;
+            string fileToFind = lines[4];
+            string drive = "F:\\SteamLibrary\\";
+            MessageBox.Show("Starting game location process. This may take sometime.");
+            file = await Task.Run(() => RecursiveSearch(drive, fileToFind));
+
+            if (file != null)
+            {
+                int bit = 32;
+                if (lines[28].Contains("32")) bit = 32; else bit = 64;
+
+                string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                path = path + $"//x{bit}";
+
+                Copy(path, file[0].Replace(fileToFind, null));
+
+                MessageBox.Show("DXVK has been installed without issue.");
+            }
+            else MessageBox.Show($"Could not find {lines[4]} in install location provided.");
+        }
+
+        void Copy(string sourceDir, string targetDir)
+        {
+            foreach (var file in Directory.GetFiles(sourceDir))
+                File.Copy(file, Path.Combine(targetDir, Path.GetFileName(file)), true);
+        }
+
+        private static string[] RecursiveSearch(string path, string file)
+        {
+            string[] files = null;
+
+            try
+            {
+                files = Directory.GetFiles(path, file, SearchOption.AllDirectories);
+                return files;
+            }
+            catch (Exception ex)
+            {
+                return files;
+            }
+
+            if (files == null)
+            {
+                return files;
             }
         }
     }

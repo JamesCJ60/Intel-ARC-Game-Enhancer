@@ -64,14 +64,18 @@ namespace Flow_Control.Pages
                     string txtPath = path + $"\\{file.Name}";
                     var lines = File.ReadAllLines(txtPath);
 
-                    if (IsConnectedToInternet() == true) image = "";
-                    else image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
+                    if (lines[10] == "" || !lines[10].Contains("https")) image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
+                    else
+                    {
+                        if (Scripts.GlobalVariables.IsConnectedToInternet() == true) image = lines[10];
+                        else image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
+                    }
 
                     games.Add(new Game()
                     {
                         ID = i,
                         gameName = lines[1],
-                        imagePath = lines[10],
+                        imagePath = image,
                         filePath = txtPath,
                     });
 
@@ -99,19 +103,6 @@ namespace Flow_Control.Pages
             PagesNavigation.NavigationService.Refresh();
         }
 
-        public bool IsConnectedToInternet()
-        {
-            string host = "8.8.8.8";  
-            bool result = false;
-            Ping p = new Ping();
-            try
-            {
-                PingReply reply = p.Send(host, 3000);
-                if (reply.Status == IPStatus.Success)
-                    return true;
-            }
-            catch { }
-            return result;
-        }
+
     }
 }
