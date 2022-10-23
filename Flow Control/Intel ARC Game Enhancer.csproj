@@ -89,6 +89,7 @@
     <Compile Include="Pages\DXVKInstall.xaml.cs">
       <DependentUpon>DXVKInstall.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\GlobalVariables.cs" />
     <Compile Include="Scripts\WindowBlur.cs" />
     <Page Include="Assets\Icons\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -11,21 +11,21 @@
     <Grid>
         <DockPanel LastChildFill="False">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="90" Background="#A0112E7C">
-                <Image Source="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1f444f5-ca6c-4df3-8c44-ec6e0276f5ac/d76r2tw-95d002f4-3377-4f06-a64e-0e39e585656b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxZjQ0NGY1LWNhNmMtNGRmMy04YzQ0LWVjNmUwMjc2ZjVhY1wvZDc2cjJ0dy05NWQwMDJmNC0zMzc3LTRmMDYtYTY0ZS0wZTM5ZTU4NTY1NmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Mz-tqNl93hbJMPoRQ_0sHkvSMU02vr51-6n1wPbXt1s" Margin="8,8,0,8"/>
-                <TextBlock Foreground="LightGray" VerticalAlignment="Center" Margin="10,10,10,10" FontSize="40" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">Fallout 3: GOTY</TextBlock>
+                <Image x:Name="GameImage" Source="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b1f444f5-ca6c-4df3-8c44-ec6e0276f5ac/d76r2tw-95d002f4-3377-4f06-a64e-0e39e585656b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2IxZjQ0NGY1LWNhNmMtNGRmMy04YzQ0LWVjNmUwMjc2ZjVhY1wvZDc2cjJ0dy05NWQwMDJmNC0zMzc3LTRmMDYtYTY0ZS0wZTM5ZTU4NTY1NmIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Mz-tqNl93hbJMPoRQ_0sHkvSMU02vr51-6n1wPbXt1s" Margin="8,8,0,8"/>
+                <TextBlock Name="GameName" Foreground="LightGray" VerticalAlignment="Center" Margin="10,10,10,10" FontSize="40" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular">Fallout 3: GOTY</TextBlock>
             </StackPanel>
 
 
-            <StackPanel DockPanel.Dock="Bottom" Height="53" Width="auto" VerticalAlignment="Center" Margin="0,3,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel DockPanel.Dock="Bottom" Height="55" Width="auto" VerticalAlignment="Center" Margin="0,3,0,0" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Border Background="#A0112E7C" CornerRadius="5,0,0,0">
                     <StackPanel Orientation="Horizontal">
 
                         <StackPanel Margin="0,2,0,0">
-                            <RadioButton IsChecked="True" Content="Play Game" Style="{DynamicResource Buttons}" Tag="{DynamicResource play}" Height="45" Width="185" Margin="5,2.5,0,3" />
+                            <RadioButton IsChecked="True" Content="Play Game" Style="{DynamicResource Buttons}" Tag="{DynamicResource play}" Height="45" Width="185" Margin="5,3,0,3" />
                         </StackPanel>
 
                         <StackPanel Margin="0,2,0,0">
-                            <RadioButton IsChecked="True" Content="Install DXVK" Style="{DynamicResource Buttons}" Tag="{DynamicResource install}" Height="45" Width="185" Margin="0,2.5,5,3" />
+                            <RadioButton IsChecked="True" Content="Install DXVK" Style="{DynamicResource Buttons}" Tag="{DynamicResource install}" Height="45" Width="185" Margin="3,3,5,3" />
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -35,27 +35,27 @@
                 <StackPanel>
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                         <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,5,0,0">Description:</TextBlock>
-                        <TextBlock Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Fallout 3 is a 2008 action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. The third major installment in the Fallout series, it is the first game to be developed by Bethesda after acquiring the rights to the franchise from Interplay Entertainment.</TextBlock>
+                        <TextBlock x:Name="Description" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Fallout 3 is a 2008 action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. The third major installment in the Fallout series, it is the first game to be developed by Bethesda after acquiring the rights to the franchise from Interplay Entertainment.</TextBlock>
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                         <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Release Date:</TextBlock>
-                        <TextBlock Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">28th October 2008</TextBlock>
+                        <TextBlock Name="Release" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">28th October 2008</TextBlock>
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                         <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Devloper(s):</TextBlock>
-                        <TextBlock Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Developed by Bethesda</TextBlock>
+                        <TextBlock Name="Developer" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Developed by Bethesda</TextBlock>
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                         <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Genre(s):</TextBlock>
-                        <TextBlock Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Action role-playing</TextBlock>
+                        <TextBlock Name="Genre" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Action role-playing</TextBlock>
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                         <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Graphics API(s):</TextBlock>
-                        <TextBlock Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">DirectX 9</TextBlock>
+                        <TextBlock x:Name="API" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">DirectX 9</TextBlock>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

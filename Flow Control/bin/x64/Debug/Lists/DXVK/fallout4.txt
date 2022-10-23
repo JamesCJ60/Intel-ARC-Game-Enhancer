@@ -1,0 +1,27 @@
+[Game Name]
+Fallout 4
+
+[Random file within install directory where DXVK needs to be installed]
+Fallout4.exe
+
+[Game Description]
+Fallout 4 is a 2015 action role-playing game developed by Bethesda Game Studios and published by Bethesda Softworks. It is the fourth main game in the Fallout series and was released worldwide on November 10, 2015, for Microsoft Windows, PlayStation 4 and Xbox One.
+
+[Game Image]
+https://staticdelivery.nexusmods.com/mods/1151/images/10080-0-1455866940.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Bethesda
+
+[Release Date]
+10th November 2015
+
+[Genres]
+Action role-playing
+
+[Game Executable]
+Fallout4.exe
+

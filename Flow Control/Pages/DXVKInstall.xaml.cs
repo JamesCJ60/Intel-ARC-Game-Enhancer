@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Flow_Control.Properties;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,23 @@ namespace Flow_Control.Pages
         public DXVKInstall()
         {
             InitializeComponent();
+
+            try
+            {
+                var lines = File.ReadAllLines(Scripts.GlobalVariables.txtFilePath);
+
+                GameName.Text = lines[1];
+                GameImage.Source = new BitmapImage(new Uri(lines[10]));
+                Description.Text = lines[7];
+                Developer.Text = lines[16];
+                API.Text = lines[13];
+                Release.Text = lines[19];
+                Genre.Text = lines[22];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

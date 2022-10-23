@@ -34,7 +34,9 @@
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="{Binding imagePath}" Width="30"></Image>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding ID}" Margin="8,0,0,0" Visibility="Collapsed"></TextBlock>
                             <TextBlock VerticalAlignment="Center" Text="{Binding gameName}" Margin="8,0,0,0"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding filePath}" Margin="8,0,0,0" Visibility="Collapsed"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

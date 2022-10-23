@@ -32,3 +32,37 @@ C:\Users\james\source\repos\Flow Control\Flow Control\obj\x64\Debug\Intel® ARC�
 C:\Users\james\source\repos\Flow Control\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.g.resources
 C:\Users\james\source\repos\Flow Control\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.exe
 C:\Users\james\source\repos\Flow Control\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Intel® ARC™ Game Enhancer.exe.config
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Intel® ARC™ Game Enhancer.exe
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\Intel® ARC™ Game Enhancer.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\LibreHardwareMonitorLib.dll
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\HidSharp.dll
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\LibreHardwareMonitorLib.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\LibreHardwareMonitorLib.xml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.AssemblyReference.cache
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.SuggestedBindingRedirects.cache
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Themes\DarkTheme.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\MainWindow.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\DXVK.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\ComingSoon.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\DXVKInstall.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\App.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer_MarkupCompile.cache
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer_MarkupCompile.lref
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\App.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Assets\Icons\Icons.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\MainWindow.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\DXVK.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\ComingSoon.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\DXVKInstall.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Styles\MainStyle.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Themes\scrollbar.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Themes\Slider.baml
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.g.resources
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Flow_Control.Properties.Resources.resources
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.GenerateResource.cache
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.CoreCompileInputs.cache
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel ARC Game Enhancer.csproj.CopyComplete
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.exe
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Intel® ARC™ Game Enhancer.pdb
