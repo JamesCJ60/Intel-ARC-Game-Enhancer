@@ -27,3 +27,6 @@ GTAV.exe
 
 [64bit or 32bit]
 64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

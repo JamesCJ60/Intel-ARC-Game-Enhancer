@@ -66,7 +66,7 @@ namespace Flow_Control.Pages
             string fileToFind = lines[4];
             string drive = "F:\\SteamLibrary\\";
 
-            MessageBox.Show("Select any base directory that contains the game you are looking for within a storage device in the next menu, e.g. Steam library folder. \n\nThe process for handling this function will be imporved in the future.", "Game Installation Selection");
+            MessageBox.Show("Select any base directory that contains the game you are looking for within a storage device in the next menu, e.g. Steam library folder. \n\nThe process for handling this function will be improved in the future.", "Game Installation Selection");
 
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.InitialDirectory = "::{20D04FE0-3AEA-1069-A2D8-08002B30309D}";
@@ -84,6 +84,12 @@ namespace Flow_Control.Pages
 
                     string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
                     path = path + $"//x{bit}";
+
+                    if (lines[31] != "false")
+                    {
+                        file[0] = file[0].Replace(fileToFind, null);
+                        file[0] = file[0] + $"\\{lines[32]}";
+                    }
 
                     Copy(path, file[0].Replace(fileToFind, null));
 

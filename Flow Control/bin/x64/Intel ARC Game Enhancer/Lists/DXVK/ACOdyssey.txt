@@ -1,0 +1,32 @@
+[Game Name]
+Assassin's Creed Odyssey
+
+[Random file within install directory where DXVK needs to be installed]
+ACOdyssey.exe
+
+[Game Description]
+Assassin's Creed Odyssey is a 2018 action role-playing video game developed by Ubisoft Quebec and published by Ubisoft. It is the eleventh major installment in the Assassin's Creed series and the successor to 2017's Assassin's Creed Origins.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/92f64fe558637b3139036adb8d5ecd14.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Ubisoft, Ubisoft Montreal
+
+[Release Date]
+1st October 2018
+
+[Genres]
+Open world, Action-adventure game, Stealth game
+
+[Game Executable]
+ACOdyssey.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

@@ -1,0 +1,32 @@
+[Game Name]
+Tomb Raider (2013)
+
+[Random file within install directory where DXVK needs to be installed]
+TombRaider.exe
+
+[Game Description]
+Tomb Raider is a 2013 action-adventure video game developed by Crystal Dynamics and published by Square Enix's European subsidiary. It is the tenth main game in the Tomb Raider franchise and a reboot of the series, acting as the first instalment in the Survivor trilogy that reconstructs the origins of Lara Croft.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/34be90676412d14c80f85809d8e3b97b.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Crystal Dynamics, Eidos-Montréal, Feral Interactive, Nixxes Software
+
+[Release Date]
+5th March 2013
+
+[Genres]
+Action-adventure game, Platform game, Action role-playing game, Survival horror, Adventure
+
+[Game Executable]
+TombRaider.exe
+
+[64bit or 32bit]
+32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

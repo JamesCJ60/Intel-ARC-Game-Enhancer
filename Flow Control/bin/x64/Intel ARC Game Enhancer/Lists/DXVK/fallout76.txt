@@ -1,0 +1,32 @@
+[Game Name]
+Fallout 76
+
+[Random file within install directory where DXVK needs to be installed]
+Fallout76.exe
+
+[Game Description]
+Fallout 76 is a 2018 online action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks. It is an installment in the Fallout series and a prequel to previous entries.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/b7196f5fd0fce35ccadc7001fd067588/32/1024x1024.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Bethesda
+
+[Release Date]
+23th October 2018
+
+[Genres]
+Action role-playing, Multiplayer
+
+[Game Executable]
+Fallout76.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

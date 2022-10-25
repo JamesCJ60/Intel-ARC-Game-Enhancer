@@ -55,6 +55,8 @@ namespace Flow_Control.Pages
                 string path = Settings.Default.Path + "\\Lists\\DXVK";
                 string root = Settings.Default.Path + "\\Lists\\DXVK";
 
+                bool internet = Scripts.GlobalVariables.IsConnectedToInternet();
+
                 DirectoryInfo dinfo = new DirectoryInfo(path);
                 Files = dinfo.GetFiles("*.txt");
                 int i = 0;
@@ -67,7 +69,7 @@ namespace Flow_Control.Pages
                     if (lines[10] == "" || !lines[10].Contains("https")) image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
                     else
                     {
-                        if (Scripts.GlobalVariables.IsConnectedToInternet() == true) image = lines[10];
+                        if (internet == true) image = lines[10];
                         else image = "pack://application:,,,/Assetsb/Icons/gamepad-line.png";
                     }
 

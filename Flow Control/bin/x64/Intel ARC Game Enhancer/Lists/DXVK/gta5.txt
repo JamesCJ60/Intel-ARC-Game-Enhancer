@@ -1,0 +1,32 @@
+[Game Name]
+Grand Theft Auto V
+
+[Random file within install directory where DXVK needs to be installed]
+GTAV.exe
+
+[Game Description]
+Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the seventh main entry in the Grand Theft Auto series, following 2008's Grand Theft Auto IV, and the fifteenth instalment overall.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/84ddfb34126fc3a48ee38d7044e87276/32/256x256.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Rockstar Games, Rockstar North
+
+[Release Date]
+17th September 2013
+
+[Genres]
+Open world, Action-adventure game, Third-person shooter, Nonlinear gameplay
+
+[Game Executable]
+GTAV.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

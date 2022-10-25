@@ -10,7 +10,7 @@
 
     <Grid>
         <DockPanel>
-            <ListBox Name="lbGames" DockPanel.Dock="Left" Width="310" Background="#A0050d23" BorderThickness="0" BorderBrush="Transparent" Foreground="LightGray" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" SelectionChanged="lbGames_SelectionChanged">
+            <ListBox Name="lbGames" DockPanel.Dock="Left" Width="310" Background="#A0050d23" BorderThickness="0" BorderBrush="Transparent" Foreground="LightGray" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" SelectionChanged="lbGames_SelectionChanged" ScrollViewer.CanContentScroll="False">
                 <ListBox.Resources>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="BorderThickness" Value="0"></Setter>
@@ -33,9 +33,9 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding imagePath}" Width="30"></Image>
+                            <Image Source="{Binding imagePath}" Width="28"></Image>
                             <TextBlock VerticalAlignment="Center" Text="{Binding ID}" Margin="8,0,0,0" Visibility="Collapsed"></TextBlock>
-                            <TextBlock VerticalAlignment="Center" Text="{Binding gameName}" Margin="8,0,0,0"></TextBlock>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding gameName}" Margin="8,0,0,0" FontSize="17"></TextBlock>
                             <TextBlock VerticalAlignment="Center" Text="{Binding filePath}" Margin="8,0,0,0" Visibility="Collapsed"></TextBlock>
                         </StackPanel>
                     </DataTemplate>

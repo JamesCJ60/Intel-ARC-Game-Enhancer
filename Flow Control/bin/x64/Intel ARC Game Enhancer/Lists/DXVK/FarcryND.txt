@@ -1,0 +1,32 @@
+[Game Name]
+Far Cry New Dawn
+
+[Random file within install directory where DXVK needs to be installed]
+FarCryNewDawn.exe
+
+[Game Description]
+Far Cry New Dawn is a 2019 first-person shooter game developed by Ubisoft Montreal and published by Ubisoft. It is a spin-off and sequel to Far Cry 5, and the twelfth overall installment in the Far Cry series.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/1501c2e690dba321cc03859b0bd0b5fb/32/256x256.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by Ubisoft, Ubisoft Montreal, Ubisoft Shanghai, Ubisoft Kyiv
+
+[Release Date]
+14th February 2019
+
+[Genres]
+First-person shooter, Adventure game, Adventure
+
+[Game Executable]
+FarCryNewDawn.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

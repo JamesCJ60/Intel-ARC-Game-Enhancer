@@ -1,0 +1,33 @@
+[Game Name]
+Portal 2
+
+[Random file within install directory where DXVK needs to be installed]
+portal2.exe
+
+[Game Description]
+ortal 2 is a 2011 puzzle-platform video game developed by Valve for Windows, Mac OS X, Linux, PlayStation 3, and Xbox 360. The digital PC version is distributed online by Valve's Steam service, while all retail editions were distributed by Electronic Arts.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/8d37be25170778cefa6d23801922dc97/32/256x256.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Valve Corporation
+
+[Release Date]
+18th April 2011
+
+[Genres]
+Puzzle Video Game, First-person shooter, Platform game, Action-adventure game, Adventure
+
+[Game Executable]
+portal2.exe
+
+[64bit or 32bit]
+32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+true
+bin

@@ -27,3 +27,6 @@ t6sp.exe
 
 [64bit or 32bit]
 32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

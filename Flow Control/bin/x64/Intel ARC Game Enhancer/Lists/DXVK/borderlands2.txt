@@ -1,0 +1,32 @@
+[Game Name]
+Borderlands 2
+
+[Random file within install directory where DXVK needs to be installed]
+Borderlands2.exe
+
+[Game Description]
+Borderlands 2 is a 2012 first-person shooter video game developed by Gearbox Software and published by 2K Games. Taking place five years following the events of Borderlands, the game is once again set on the planet of Pandora.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/52c409f1571f500e28f490a302a12540.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Gearbox Software, Aspyr
+
+[Release Date]
+18th September 2012
+
+[Genres]
+First-person shooter, Action role-playing game
+
+[Game Executable]
+Borderlands2.exe
+
+[64bit or 32bit]
+32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

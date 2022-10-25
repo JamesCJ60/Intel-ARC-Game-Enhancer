@@ -1,0 +1,32 @@
+[Game Name]
+Call of Duty: Black Ops II
+
+[Random file within install directory where DXVK needs to be installed]
+t6sp.exe
+
+[Game Description]
+Call of Duty: Black Ops II is a 2012 first-person shooter video game developed by Treyarch and published by Activision. It was released for Microsoft Windows, PlayStation 3, and Xbox 360 on November 12, 2012, and for the Wii U on November 18 in North America and November 30 in PAL regions.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/17f98ddf040204eda0af36a108cbdea4.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Treyarch
+
+[Release Date]
+12th November 2012
+
+[Genres]
+First-person shooter, Adventure game, Adventure
+
+[Game Executable]
+t6sp.exe
+
+[64bit or 32bit]
+32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

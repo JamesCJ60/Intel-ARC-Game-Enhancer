@@ -1,0 +1,32 @@
+[Game Name]
+Assassin's Creed Origins
+
+[Random file within install directory where DXVK needs to be installed]
+ACOrigins.exe
+
+[Game Description]
+Assassin's Creed Origins is a 2017 action role-playing video game developed by Ubisoft Montreal and published by Ubisoft. It is the tenth major installment in the Assassin's Creed series, following 2015's Assassin's Creed Syndicate.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/846c260d715e5b854ffad5f70a516c88/32/256x256.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Ubisoft, Ubisoft Montreal
+
+[Release Date]
+27th October 2017
+
+[Genres]
+Open world, Action-adventure game, Stealth game
+
+[Game Executable]
+ACOrigins.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

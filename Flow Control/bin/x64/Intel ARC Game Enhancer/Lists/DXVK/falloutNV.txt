@@ -1,0 +1,32 @@
+[Game Name]
+Fallout: New Vegas
+
+[Random file within install directory where DXVK needs to be installed]
+FalloutNV.exe
+
+[Game Description]
+Fallout: New Vegas is a 2010 action role-playing game developed by Obsidian Entertainment and published by Bethesda Softworks. It was announced in April 2009 and released for Microsoft Windows, PlayStation 3, and Xbox 360 on October 19, 2010.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/82cec96096d4281b7c95cd7e74623496.png
+
+[Game Graphics API]
+DirectX 9
+
+[Game Developers]
+Developed by Obsidian Entertainment
+
+[Release Date]
+19th October 2010
+
+[Genres]
+Action role-playing
+
+[Game Executable]
+FalloutNV.exe
+
+[64bit or 32bit]
+32bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

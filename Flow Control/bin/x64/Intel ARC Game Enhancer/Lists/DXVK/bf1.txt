@@ -1,0 +1,32 @@
+[Game Name]
+Battlefield 1
+
+[Random file within install directory where DXVK needs to be installed]
+bf1.exe
+
+[Game Description]
+Battlefield 1 is a first-person shooter game developed by DICE and published by Electronic Arts. It is the tenth installment in the Battlefield series and the first main entry in the series since Battlefield 4 in 2013. It was released for Microsoft Windows, PlayStation 4 and Xbox One in October 2016.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/de01d76e793fec3fba32f4401a45fb20/32/256x256.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by DICE
+
+[Release Date]
+21st October 2016
+
+[Genres]
+First-person shooter, tactical shooter
+
+[Game Executable]
+bf1.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false
