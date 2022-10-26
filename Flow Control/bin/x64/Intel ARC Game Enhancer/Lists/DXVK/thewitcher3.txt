@@ -1,0 +1,32 @@
+[Game Name]
+The Witcher 3: Wild Hunt
+
+[Random file within install directory where DXVK needs to be installed]
+witcher3.exe
+
+[Game Description]
+The Witcher 3: Wild Hunt is a 2015 action role-playing game developed and published by CD Projekt. It is the sequel to the 2011 game The Witcher 2: Assassins of Kings and the third game in The Witcher video game series, played in an open world with a third-person perspective.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/b162dd99a6b956cd87749ccccc279373.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by CD Projekt, CD Projekt RED
+
+[Release Date]
+18th May 2015
+
+[Genres]
+Open world, Action role-playing game, Fighting game, Action-adventure game, Nonlinear gameplay
+
+[Game Executable]
+witcher3.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

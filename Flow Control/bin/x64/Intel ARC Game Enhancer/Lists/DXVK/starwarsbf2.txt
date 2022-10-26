@@ -1,0 +1,32 @@
+[Game Name]
+Star Wars: Battlefront II
+
+[Random file within install directory where DXVK needs to be installed]
+starwarsbattlefrontii.exe
+
+[Game Description]
+Star Wars Battlefront II is an action shooter video game based on the Star Wars franchise. It is the fourth main installment of the Star Wars: Battlefront series, and a sequel to the 2015 reboot of the series.
+
+[Game Image]
+https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/72e0ac3a885b78926065a979b6a46206/32/256x256.png
+
+[Game Graphics API]
+DirectX 11
+
+[Game Developers]
+Developed by DICE, Motive Studio, Criterion Software
+
+[Release Date]
+17th November 2017
+
+[Genres]
+First-person shooter, Third-person shooter, Adventure, Strategy
+
+[Game Executable]
+starwarsbattlefrontii.exe
+
+[64bit or 32bit]
+64bit
+
+[Other directory ahead of game exe where DXVK needs to be installed e.g. \bin folder with Valve games]
+false

@@ -79,21 +79,25 @@ namespace Flow_Control.Pages
 
                 if (file != null)
                 {
-                    int bit = 32;
-                    if (lines[28].Contains("32")) bit = 32; else bit = 64;
-
-                    string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                    path = path + $"//x{bit}";
-
-                    if (lines[31] != "false")
+                    if (file.Contains(fileToFind))
                     {
-                        file[0] = file[0].Replace(fileToFind, null);
-                        file[0] = file[0] + $"\\{lines[32]}";
+                        int bit = 32;
+                        if (lines[28].Contains("32")) bit = 32; else bit = 64;
+
+                        string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                        path = path + $"//x{bit}";
+
+                        if (lines[31] != "false")
+                        {
+                            file[0] = file[0].Replace(fileToFind, null);
+                            file[0] = file[0] + $"\\{lines[32]}";
+                        }
+
+                        Copy(path, file[0].Replace(fileToFind, null));
+
+                        MessageBox.Show("DXVK has been installed without issue.", "DXVK Installation Finished");
                     }
-
-                    Copy(path, file[0].Replace(fileToFind, null));
-
-                    MessageBox.Show("DXVK has been installed without issue.", "DXVK Installation Finished");
+                    else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Finished");
                 }
                 else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Finished");
             }
@@ -107,20 +111,22 @@ namespace Flow_Control.Pages
 
         private static string[] RecursiveSearch(string path, string file)
         {
-            string[] files = null;
+            string[] files;
 
             try
             {
                 files = Directory.GetFiles(path, file, SearchOption.AllDirectories);
-                return files;
+
+                if (files == null)
+                {
+                    files[0] = " ";
+                    return files;
+                } 
+                else return files;
             }
             catch (Exception ex)
             {
-                return files;
-            }
-
-            if (files == null)
-            {
+                files = null;
                 return files;
             }
         }

@@ -44,7 +44,7 @@
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Margin="10,0,0,0">
-                        <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Devloper(s):</TextBlock>
+                        <TextBlock Foreground="LightGray" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" FontSize="22" Margin="0,10,0,0">Developer(s):</TextBlock>
                         <TextBlock Name="Developer" Foreground="LightGray" TextWrapping="WrapWithOverflow" FontSize="17" Margin="35,2,35,0">Developed by Bethesda</TextBlock>
                     </StackPanel>
 
