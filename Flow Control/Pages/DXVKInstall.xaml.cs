@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Reflection;
 using Path = System.IO.Path;
+using System.Collections;
 
 namespace Flow_Control.Pages
 {
@@ -79,8 +80,12 @@ namespace Flow_Control.Pages
 
                 if (file != null)
                 {
-                    if (file.Contains(fileToFind))
+                    //if (file.Contains(fileToFind))
+                    //{
+                    try
                     {
+
+
                         int bit = 32;
                         if (lines[28].Contains("32")) bit = 32; else bit = 64;
 
@@ -93,13 +98,29 @@ namespace Flow_Control.Pages
                             file[0] = file[0] + $"\\{lines[32]}";
                         }
 
+                        string cache = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                        cache = cache + "\\Lists\\DXVK\\cache\\" + fileToFind.Replace(".exe", ".dxvk-cache.md");
+
+                        string cache2 = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                        cache2 = cache2 + "\\Lists\\DXVK\\cache\\" + fileToFind.Replace(".exe", ".dxvk-cache");
+
+
+                        if (File.Exists(cache)) File.Copy(cache, file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache.md"));
+                        if (File.Exists(cache2)) File.Copy(cache2, file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache"));
+
                         Copy(path, file[0].Replace(fileToFind, null));
 
                         MessageBox.Show("DXVK has been installed without issue.", "DXVK Installation Finished");
                     }
-                    else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Finished");
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"The was an error trying to find {lines[4]} in location provided.", "DXVK Installation Error");
+                        //MessageBox.Show(ex.Message);
+                    }
+                    //}
+                    //else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Error");
                 }
-                else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Finished");
+                else MessageBox.Show($"Could not find {lines[4]} in install location provided.", "DXVK Installation Error");
             }
         }
 
@@ -121,7 +142,7 @@ namespace Flow_Control.Pages
                 {
                     files[0] = " ";
                     return files;
-                } 
+                }
                 else return files;
             }
             catch (Exception ex)
