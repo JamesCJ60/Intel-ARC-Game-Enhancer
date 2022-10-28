@@ -98,15 +98,19 @@ namespace Flow_Control.Pages
                             file[0] = file[0] + $"\\{lines[32]}";
                         }
 
+                        
+
                         string cache = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                        cache = cache + "\\Lists\\DXVK\\cache\\" + fileToFind.Replace(".exe", ".dxvk-cache.md");
-
-                        string cache2 = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                        cache2 = cache2 + "\\Lists\\DXVK\\cache\\" + fileToFind.Replace(".exe", ".dxvk-cache");
-
-
-                        if (File.Exists(cache)) File.Copy(cache, file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache.md"));
-                        if (File.Exists(cache2)) File.Copy(cache2, file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache"));
+                        cache = cache + "\\Lists\\DXVK\\cache\\" + fileToFind.Replace(".exe", ".dxvk-cache");
+                        
+                        if (File.Exists(cache))
+                        {
+                            if(File.Exists(file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache")))
+                            {
+                                File.Delete(file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache"));
+                            }
+                            File.Copy(cache, file[0].Replace(fileToFind, null) + fileToFind.Replace(".exe", ".dxvk-cache"));
+                        }   
 
                         Copy(path, file[0].Replace(fileToFind, null));
 

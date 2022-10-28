@@ -10,7 +10,7 @@
 
     <Grid>
         <DockPanel>
-            <ListBox Name="lbGames" DockPanel.Dock="Left" Width="310" Background="#A0050d23" BorderThickness="0" BorderBrush="Transparent" Foreground="LightGray" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" SelectionChanged="lbGames_SelectionChanged" ScrollViewer.CanContentScroll="False">
+            <ListBox Name="lbGames" DockPanel.Dock="Left" Width="325" Background="#A0050d23" BorderThickness="0" BorderBrush="Transparent" Foreground="LightGray" FontSize="18" FontFamily="pack://application:,,,/Assets/Fonts/#IntelOne Display Regular" SelectionChanged="lbGames_SelectionChanged" ScrollViewer.CanContentScroll="False">
                 <ListBox.Resources>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="BorderThickness" Value="0"></Setter>
