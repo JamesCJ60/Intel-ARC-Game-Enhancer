@@ -1,6 +1,6 @@
 # Intel® ARC™ Game Enhancer
 
-![image](https://user-images.githubusercontent.com/20888782/197904719-cda89a4c-8834-433e-8794-ec3ee160d9ab.png)
+![image](https://user-images.githubusercontent.com/20888782/198850081-21823a0a-89f9-49de-869b-04aef663f6a3.png)
 
 This project is still very much a WORK IN PROGRESS!
 
