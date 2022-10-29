@@ -78,3 +78,5 @@ C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\bin\x64\Debug\M
 C:\Users\james\Desktop\Intel ARC Game Enhancer\Intel® ARC™ Game Enhancer.exe.config
 C:\Users\james\Desktop\Intel ARC Game Enhancer\Intel® ARC™ Game Enhancer.exe
 C:\Users\james\Desktop\Intel ARC Game Enhancer\Intel® ARC™ Game Enhancer.pdb
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\Magpie.g.cs
+C:\Users\james\source\repos\Intel ARC Game Enhancer\Flow Control\obj\x64\Debug\Pages\Magpie.baml

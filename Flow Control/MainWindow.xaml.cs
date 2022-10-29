@@ -77,6 +77,8 @@ namespace Flow_Control
 
             Title.Text = rdDXVK.Content.ToString();
             PagesNavigation.Navigate(new System.Uri("Pages/DXVK.xaml", UriKind.RelativeOrAbsolute));
+            string pathToMagpie = Settings.Default.Path + "\\bin\\magpie\\Magpie.exe";
+            System.Diagnostics.Process.Start(pathToMagpie);
         }
 
 
@@ -105,6 +107,18 @@ namespace Flow_Control
         private void rdGamePatch_Click(object sender, RoutedEventArgs e)
         {
             Title.Text = rdGamePatch.Content.ToString();
+            PagesNavigation.Navigate(new System.Uri("Pages/ComingSoon.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdMagpie_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Text = rdMagpie.Content.ToString();
+            PagesNavigation.Navigate(new System.Uri("Pages/Magpie.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void rdDLSS2FSR_Click(object sender, RoutedEventArgs e)
+        {
+            Title.Text = rdDLSS2FSR.Content.ToString();
             PagesNavigation.Navigate(new System.Uri("Pages/ComingSoon.xaml", UriKind.RelativeOrAbsolute));
         }
     }

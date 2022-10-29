@@ -35,6 +35,8 @@
                     <StackPanel Orientation="Vertical">
                         <RadioButton x:Name="rdDXVK" IsChecked="True" Content="DXVK Improvements" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource speed}" Height="50" Width="60" Margin="0,1,0,0" Click="rdDXVK_Click" ToolTip="DXVK Improvements"/>
                         <RadioButton x:Name="rdGamePatch" IsChecked="False" Content="Game Patches" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource patch}" Height="50" Width="60" Margin="0,1,0,0" Click="rdGamePatch_Click" ToolTip="Game Patches"/>
+                        <RadioButton x:Name="rdDLSS2FSR" IsChecked="False" Content="DLSS2FSR" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource DLSS2FSR}" Height="50" Width="60" Margin="0,1,0,0" Click="rdDLSS2FSR_Click" ToolTip="DLSS2FSR"/>
+                        <RadioButton x:Name="rdMagpie" IsChecked="False" Content="Magpie FSR" Style="{DynamicResource MenuRadioButtonStyle}" Tag="{DynamicResource magpieFSR}" Height="50" Width="60" Margin="0,1,0,0" Click="rdMagpie_Click" ToolTip="Magpie FSR"/>
                     </StackPanel>
                 </Border>
                 <Frame x:Name="PagesNavigation" NavigationUIVisibility="Hidden">

@@ -10,7 +10,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border  BorderThickness="0" BorderBrush="Black" Background="{DynamicResource SecundaryGrayColor}" Height="6" CornerRadius="3"/>
+                    <Border  BorderThickness="0" BorderBrush="Black" Background="#112E7C" Height="6" CornerRadius="3"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -22,7 +22,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border SnapsToDevicePixels="True" Background="{DynamicResource PrimaryBlueColor}"  BorderThickness="0" BorderBrush="{DynamicResource SecundaryGrayColor}" Height="6" CornerRadius="3,0,0,3"/>
+                    <Border SnapsToDevicePixels="True" Background="{DynamicResource PrimaryBlueColor}"  BorderThickness="0" BorderBrush="#A0112E7C" Height="6" CornerRadius="3,0,0,3"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
